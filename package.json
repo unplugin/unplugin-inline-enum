@@ -1,0 +1,113 @@
+{
+  "name": "unplugin-inline-enum",
+  "version": "0.0.0",
+  "packageManager": "pnpm@8.15.4",
+  "description": "Inline enum value to optimize bundle size.",
+  "keywords": [
+    "unplugin",
+    "rollup",
+    "vite",
+    "esbuild",
+    "webpack"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/unplugin/unplugin-inline-enum#readme",
+  "bugs": {
+    "url": "https://github.com/unplugin/unplugin-inline-enum/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unplugin/unplugin-inline-enum.git"
+  },
+  "author": "三咲智子 <sxzz@sxzz.moe>",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    },
+    "./vite": {
+      "require": "./dist/vite.js",
+      "import": "./dist/vite.mjs"
+    },
+    "./webpack": {
+      "require": "./dist/webpack.js",
+      "import": "./dist/webpack.mjs"
+    },
+    "./rollup": {
+      "require": "./dist/rollup.js",
+      "import": "./dist/rollup.mjs"
+    },
+    "./esbuild": {
+      "require": "./dist/esbuild.js",
+      "import": "./dist/esbuild.mjs"
+    },
+    "./api": {
+      "require": "./dist/api.js",
+      "import": "./dist/api.mjs"
+    },
+    "./*": [
+      "./*",
+      "./*.d.ts"
+    ]
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./*"
+      ]
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "lint": "eslint --cache .",
+    "lint:fix": "pnpm run lint --fix",
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "release": "bumpp && pnpm publish",
+    "prepublishOnly": "pnpm run build"
+  },
+  "dependencies": {
+    "@rollup/pluginutils": "^5.1.0",
+    "ast-kit": "^0.11.3",
+    "execa": "^8.0.1",
+    "fast-glob": "^3.3.2",
+    "magic-string": "^0.30.7",
+    "picomatch": "^4.0.1",
+    "unplugin": "^1.8.0",
+    "unplugin-replace": "link:/Users/kevin/Developer/open-source/unplugin-replace"
+  },
+  "devDependencies": {
+    "@babel/types": "^7.24.0",
+    "@sxzz/eslint-config": "^3.8.1",
+    "@sxzz/prettier-config": "^2.0.1",
+    "@types/node": "^20.11.24",
+    "@types/picomatch": "^2.3.3",
+    "@vue-macros/test-utils": "^1.4.0",
+    "bumpp": "^9.3.0",
+    "esbuild": "^0.20.1",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "rollup": "^4.12.0",
+    "tsup": "^8.0.2",
+    "tsx": "^4.7.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.1.4",
+    "vitest": "^1.3.1",
+    "webpack": "^5.90.3"
+  },
+  "engines": {
+    "node": ">=16.14.0"
+  },
+  "prettier": "@sxzz/prettier-config"
+}

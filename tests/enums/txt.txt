@@ -1,0 +1,3 @@
+export enum TestEnum {
+A = 'b',
+}

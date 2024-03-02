@@ -1,0 +1,72 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`scanEnums > scanMode: fs 1`] = `
+{
+  "declarations": {
+    "ts.ts": [
+      {
+        "id": "TestEnum",
+        "members": [
+          {
+            "name": "A",
+            "value": "foo",
+          },
+          {
+            "name": "B",
+            "value": 100,
+          },
+          {
+            "name": "C",
+            "value": 4,
+          },
+          {
+            "name": "D",
+            "value": 3.14,
+          },
+        ],
+        "range": [
+          0,
+          74,
+        ],
+      },
+    ],
+    "tsx.tsx": [
+      {
+        "id": "TestEnum2",
+        "members": [
+          {
+            "name": "A",
+            "value": "foo",
+          },
+          {
+            "name": "B",
+            "value": 100,
+          },
+          {
+            "name": "C",
+            "value": 4,
+          },
+          {
+            "name": "D",
+            "value": 3.14,
+          },
+        ],
+        "range": [
+          0,
+          75,
+        ],
+      },
+    ],
+  },
+  "defines": {
+    "TestEnum.A": ""foo"",
+    "TestEnum.B": "100",
+    "TestEnum.C": "4",
+    "TestEnum.D": "3.14",
+    "TestEnum2.A": ""foo"",
+    "TestEnum2.B": "100",
+    "TestEnum2.C": "4",
+    "TestEnum2.D": "3.14",
+  },
+}
+`;

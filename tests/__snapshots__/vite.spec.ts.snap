@@ -1,0 +1,8 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`vite 1`] = `
+"const values = ["foo", 100, 4];
+console.log("foo", 100, 4);
+console.log(values);
+"
+`;
