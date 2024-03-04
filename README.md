@@ -37,7 +37,11 @@ console.log(1, 'foo')
 ## Installation
 
 ```bash
+# npm
 npm i -D unplugin-inline-enum
+
+# jsr
+npx jsr add -D @unplugin/inline-enum
 ```
 
 <details>
