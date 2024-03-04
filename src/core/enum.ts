@@ -211,10 +211,11 @@ export function scanEnums(options: ScanOptions): EnumData {
  */
 export function scanFiles(options: ScanOptions): string[] {
   if (options.scanMode === 'fs') {
-    return fg.sync(options.scanPattern, {
-      cwd: options.scanDir,
-      absolute: true,
-    })
+    return fg
+      .sync(options.scanPattern, {
+        cwd: options.scanDir,
+      })
+      .map((file) => path.resolve(options.scanDir, file))
   } else {
     const { stdout, stderr, exitCode } = execaSync(
       'git',
