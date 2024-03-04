@@ -8,22 +8,34 @@ import picomatch from 'picomatch'
 import type { Expression, PrivateName } from '@babel/types'
 import type { OptionsResolved } from './options'
 
+/**
+ * Represents the scan options for the enum.
+ */
 export type ScanOptions = Pick<
   OptionsResolved,
   'scanDir' | 'scanMode' | 'scanPattern'
 >
 
+/**
+ * Represents a member of an enum.
+ */
 export interface EnumMember {
   readonly name: string
   readonly value: string | number
 }
 
+/**
+ * Represents a declaration of an enum.
+ */
 export interface EnumDeclaration {
   readonly id: string
   readonly range: readonly [start: number, end: number]
   readonly members: ReadonlyArray<EnumMember>
 }
 
+/**
+ * Represents the data of all enums.
+ */
 export interface EnumData {
   readonly declarations: {
     readonly [file: string]: ReadonlyArray<EnumDeclaration>
@@ -31,13 +43,21 @@ export interface EnumData {
   readonly defines: { readonly [id_key: `${string}.${string}`]: string }
 }
 
+/**
+ * Evaluates a JavaScript expression and returns the result.
+ * @param exp - The expression to evaluate.
+ * @returns The evaluated result.
+ */
 function evaluate(exp: string): string | number {
   return new Function(`return ${exp}`)()
 }
 
-// this is called in the build script entry once
-// so the data can be shared across concurrent Rollup processes
-export function scanEnums(options: ScanOptions) {
+/**
+ * Scans the specified directory for enums based on the provided options.
+ * @param options - The scan options for the enum.
+ * @returns The data of all enums found.
+ */
+export function scanEnums(options: ScanOptions): EnumData {
   const declarations: { [file: string]: EnumDeclaration[] } =
     Object.create(null)
 
@@ -184,6 +204,11 @@ export function scanEnums(options: ScanOptions) {
   return enumData
 }
 
+/**
+ * Scans the specified directory for files based on the provided options.
+ * @param options - The scan options for the files.
+ * @returns The list of files found.
+ */
 export function scanFiles(options: ScanOptions): string[] {
   if (options.scanMode === 'fs') {
     return fg.sync(options.scanPattern, {

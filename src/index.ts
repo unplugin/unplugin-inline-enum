@@ -1,3 +1,8 @@
+/**
+ * This entry file is for main unplugin.
+ * @module
+ */
+
 import { createUnplugin } from 'unplugin'
 import { createFilter } from '@rollup/pluginutils'
 import MagicString from 'magic-string'
@@ -5,6 +10,9 @@ import ReplacePlugin from 'unplugin-replace'
 import { type Options, resolveOption } from './core/options'
 import { scanEnums } from './core/enum'
 
+/**
+ * The main unplugin instance.
+ */
 export default createUnplugin<Options | undefined, true>(
   (rawOptions = {}, meta) => {
     const options = resolveOption(rawOptions)

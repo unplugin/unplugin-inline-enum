@@ -85,7 +85,7 @@
     "magic-string": "^0.30.7",
     "picomatch": "^4.0.1",
     "unplugin": "^1.8.0",
-    "unplugin-replace": "link:/Users/kevin/Developer/open-source/unplugin-replace"
+    "unplugin-replace": "^0.2.1"
   },
   "devDependencies": {
     "@babel/types": "^7.24.0",

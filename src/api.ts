@@ -1,3 +1,9 @@
+/**
+ * This entry file is for exposing the core API.
+ *
+ * @module
+ */
+
 export {
   scanFiles,
   scanEnums,
@@ -6,3 +12,5 @@ export {
   type EnumDeclaration,
   type EnumData,
 } from './core/enum'
+
+export { type Options, resolveOptions } from './core/options'
