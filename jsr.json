@@ -1,0 +1,13 @@
+{
+  "name": "@unplugin/inline-enum",
+  "version": "0.0.0",
+  "exports": {
+    "./index": "./src/index.ts",
+    "./api": "./src/api.ts",
+    "./esbuild": "./src/esbuild.ts",
+    "./rollup": "./src/rollup.ts",
+    "./vite": "./src/vite.ts",
+    "./webpack": "./src/webpack.ts"
+  },
+  "exclude": ["tests", "pnpm-lock.yaml", "tsup.config.ts", "eslint.config.js"]
+}

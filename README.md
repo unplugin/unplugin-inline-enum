@@ -1,10 +1,8 @@
-# unplugin-inline-enum [![npm](https://img.shields.io/npm/v/unplugin-inline-enum.svg)](https://npmjs.com/package/unplugin-inline-enum)
+# unplugin-inline-enum [![npm](https://img.shields.io/npm/v/unplugin-inline-enum.svg)](https://npmjs.com/package/unplugin-inline-enum) [![jsr](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fjsr-api.sxzz.moe%2Fversion%2F%40unplugin%2Finline-enum&query=version&prefix=v&label=jsr&color=%23f7df1e)](https://jsr.io/@unplugin/inline-enum)
 
 [![Unit Test](https://github.com/unplugin/unplugin-inline-enum/actions/workflows/unit-test.yml/badge.svg)](https://github.com/unplugin/unplugin-inline-enum/actions/workflows/unit-test.yml)
 
 Inline enum value to optimize bundle size.
-
-> Working in Progress...
 
 ## Installation
 
@@ -66,6 +64,14 @@ module.exports = {
 ```
 
 <br></details>
+
+## Usage
+
+> Working in Progress...
+
+## Options
+
+Refer to [docs](https://jsr.io/@unplugin/inline-enum/doc/api/~/Options).
 
 ## Credits
 
