@@ -9,10 +9,5 @@
     "./vite": "./src/vite.ts",
     "./webpack": "./src/webpack.ts"
   },
-  "exclude": [
-    "tests",
-    "pnpm-lock.yaml",
-    "tsup.config.ts",
-    "eslint.config.js"
-  ]
+  "exclude": ["tests", "pnpm-lock.yaml", "tsup.config.ts", "eslint.config.js"]
 }
