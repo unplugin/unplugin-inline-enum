@@ -12,10 +12,10 @@ import unplugin from './index'
  * @example
  * ```ts
  * // vite.config.ts
- * import Macros from 'unplugin-inline-enum/vite'
+ * import InlineEnum from 'unplugin-inline-enum/vite'
  *
  * export default defineConfig({
- *   plugins: [Macros()],
+ *   plugins: [InlineEnum()],
  * })
  * ```
  */

@@ -2,7 +2,37 @@
 
 [![Unit Test](https://github.com/unplugin/unplugin-inline-enum/actions/workflows/unit-test.yml/badge.svg)](https://github.com/unplugin/unplugin-inline-enum/actions/workflows/unit-test.yml)
 
-Inline enum value to optimize bundle size.
+Inline enum values to optimize bundle size.
+
+## Features
+
+- 🚀 Inline enum values to reduce the size of the bundle.
+- 🧹 Simplify generated enums in JavaScript.
+
+```ts
+export enum TestEnum {
+  a = 1,
+  b = 'foo',
+}
+console.log(TestEnum.a, TestEnum.b)
+
+// before
+export let TestEnum
+;(function (TestEnum) {
+  TestEnum[(TestEnum.a = 1)] = 'a'
+  TestEnum.b = 'foo'
+})(TestEnum || (TestEnum = {}))
+
+console.log(TestEnum.a, TestEnum.b)
+
+// after
+const TestEnum = {
+  a: 1,
+  '1': 'a',
+  b: 'foo',
+}
+console.log(1, 'foo')
+```
 
 ## Installation
 
@@ -65,17 +95,14 @@ module.exports = {
 
 <br></details>
 
-## Usage
-
-> Working in Progress...
-
 ## Options
 
 Refer to [docs](https://jsr.io/@unplugin/inline-enum/doc/api/~/Options).
 
 ## Credits
 
-Thanks to @xiaoxiangmoe and @yangmingshan for their contributions in the
+Thanks to [@xiaoxiangmoe](https://github.com/xiaoxiangmoe) and
+[@yangmingshan](https://github.com/yangmingshan) for their contributions in the
 [PR](https://github.com/vuejs/core/pull/9261).
 
 ## Sponsors

@@ -8,6 +8,10 @@ export interface Options {
   include?: FilterPattern
   exclude?: FilterPattern
   enforce?: 'pre' | 'post' | undefined
+  /**
+   * The mode used to scan for enum files.
+   * @default 'fs'
+   */
   scanMode?: 'git' | 'fs'
   /**
    * The directory to scan for enum files.

@@ -12,10 +12,10 @@ import unplugin from './index'
  * @example
  * ```ts
  * // rollup.config.js
- * import Macros from 'unplugin-inline-enum/rollup'
+ * import InlineEnum from 'unplugin-inline-enum/rollup'
  *
  * export default {
- *   plugins: [Macros()],
+ *   plugins: [InlineEnum()],
  * }
  * ```
  */
