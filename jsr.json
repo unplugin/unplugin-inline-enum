@@ -1,6 +1,6 @@
 {
   "name": "@unplugin/inline-enum",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "exports": {
     "./index": "./src/index.ts",
     "./api": "./src/api.ts",
@@ -9,5 +9,10 @@
     "./vite": "./src/vite.ts",
     "./webpack": "./src/webpack.ts"
   },
-  "exclude": ["tests", "pnpm-lock.yaml", "tsup.config.ts", "eslint.config.js"]
+  "exclude": [
+    "tests",
+    "pnpm-lock.yaml",
+    "tsup.config.ts",
+    "eslint.config.js"
+  ]
 }
