@@ -1,13 +1,11 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`esbuild 1`] = `
-"(() => {
-  // tests/fixtures/mod.ts
-  var values = ["foo", 100, 4];
+"// tests/fixtures/mod.ts
+var values = ["foo", 100, 4];
 
-  // tests/fixtures/main.ts
-  console.log("foo", 100, 4);
-  console.log(values);
-})();
+// tests/fixtures/main.ts
+console.log("foo", 100, 4);
+console.log(values);
 "
 `;

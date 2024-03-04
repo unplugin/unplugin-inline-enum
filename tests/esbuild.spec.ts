@@ -8,6 +8,7 @@ test('esbuild', async () => {
     entryPoints: [path.resolve(__dirname, 'fixtures/main.ts')],
     bundle: true,
     write: false,
+    format: 'esm',
     plugins: [
       UnpluginInlineEnum({
         scanDir: path.resolve(__dirname, 'fixtures'),
