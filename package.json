@@ -107,7 +107,7 @@
     "webpack": "^5.90.3"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=16.14.0"
   },
   "prettier": "@sxzz/prettier-config"
 }
