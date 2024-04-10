@@ -94,8 +94,7 @@ export function scanEnums(options: ScanOptions): EnumData {
         let lastInitialized: string | number | undefined
         const members: Array<EnumMember> = []
 
-        for (let i = 0; i < decl.members.length; i++) {
-          const e = decl.members[i]
+        for (const e of decl.members) {
           const key = e.id.type === 'Identifier' ? e.id.name : e.id.value
           const fullKey = `${id}.${key}` as const
           const saveValue = (value: string | number) => {
