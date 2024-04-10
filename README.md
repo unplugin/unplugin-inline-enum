@@ -1,4 +1,4 @@
-# unplugin-inline-enum [![npm](https://img.shields.io/npm/v/unplugin-inline-enum.svg)](https://npmjs.com/package/unplugin-inline-enum) [![jsr](https://img.shields.io/endpoint?url=https%3A%2F%2Fjsr-api.sxzz.moe%2Fbadge%2F%40unplugin%2Finline-enum)](https://jsr.io/@unplugin/inline-enum)
+# unplugin-inline-enum [![npm](https://img.shields.io/npm/v/unplugin-inline-enum.svg)](https://npmjs.com/package/unplugin-inline-enum) [![jsr](https://jsr.io/badges/@unplugin/inline-enum)](https://jsr.io/@unplugin/inline-enum)
 
 [![Unit Test](https://github.com/unplugin/unplugin-inline-enum/actions/workflows/unit-test.yml/badge.svg)](https://github.com/unplugin/unplugin-inline-enum/actions/workflows/unit-test.yml)
 
