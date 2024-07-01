@@ -79,7 +79,7 @@
   },
   "dependencies": {
     "@rollup/pluginutils": "^5.1.0",
-    "ast-kit": "^0.12.2",
+    "ast-kit": "^1.0.0",
     "execa": "^9.3.0",
     "fast-glob": "^3.3.2",
     "magic-string": "^0.30.10",
