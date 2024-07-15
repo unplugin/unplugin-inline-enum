@@ -88,7 +88,7 @@
     "unplugin-replace": "^0.3.2"
   },
   "devDependencies": {
-    "@babel/types": "^7.24.7",
+    "@babel/types": "^7.24.8",
     "@sxzz/eslint-config": "^3.13.0",
     "@sxzz/prettier-config": "^2.0.2",
     "@types/node": "^20.14.10",
@@ -96,15 +96,15 @@
     "@vue-macros/test-utils": "^1.4.0",
     "bumpp": "^9.4.1",
     "esbuild": "^0.23.0",
-    "eslint": "^9.6.0",
-    "prettier": "^3.3.2",
-    "rollup": "^4.18.0",
+    "eslint": "^9.7.0",
+    "prettier": "^3.3.3",
+    "rollup": "^4.18.1",
     "tsup": "^8.1.0",
     "tsx": "^4.16.2",
     "typescript": "^5.5.3",
     "vite": "^5.3.3",
     "vitest": "^1.6.0",
-    "webpack": "^5.92.1"
+    "webpack": "^5.93.0"
   },
   "engines": {
     "node": ">=16.14.0"
