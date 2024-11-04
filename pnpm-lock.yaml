@@ -50,7 +50,7 @@ importers:
         version: 3.0.0
       '@vue-macros/test-utils':
         specifier: ^1.4.0
-        version: 1.4.0(@types/node@22.8.7)(terser@5.30.3)(vite@5.3.4(@types/node@22.8.7)(terser@5.30.3))(vitest@2.0.3(@types/node@22.8.7)(terser@5.30.3))
+        version: 1.4.0(@types/node@22.8.7)(terser@5.30.3)(vite@5.3.6(@types/node@22.8.7)(terser@5.30.3))(vitest@2.0.3(@types/node@22.8.7)(terser@5.30.3))
       bumpp:
         specifier: ^9.4.1
         version: 9.4.1
@@ -68,7 +68,7 @@ importers:
         version: 4.19.0
       tsup:
         specifier: ^8.2.1
-        version: 8.2.1(jiti@1.21.6)(postcss@8.4.39)(tsx@4.19.0)(typescript@5.5.3)
+        version: 8.2.1(jiti@1.21.6)(postcss@8.4.47)(tsx@4.19.0)(typescript@5.5.3)
       tsx:
         specifier: ^4.16.2
         version: 4.19.0
@@ -77,7 +77,7 @@ importers:
         version: 5.5.3
       vite:
         specifier: ^5.3.4
-        version: 5.3.4(@types/node@22.8.7)(terser@5.30.3)
+        version: 5.3.6(@types/node@22.8.7)(terser@5.30.3)
       vitest:
         specifier: ^2.0.3
         version: 2.0.3(@types/node@22.8.7)(terser@5.30.3)
@@ -2369,8 +2369,8 @@ packages:
   perfect-debounce@1.0.0:
     resolution: {integrity: sha512-xCy9V055GLEqoFaHoC1SoLIaLmWctgCUaBaWxDZ7/Zx4CTyX7cJQLJOok/orfjZAh9kEYpjJa4d0KcJmCbctZA==}
 
-  picocolors@1.0.1:
-    resolution: {integrity: sha512-anP1Z8qwhkbmu7MFP5iTt+wQKXgwzf7zTyGlcdzabySa9vd0Xt392U0rVmz9poOaBj0uHJKyyo9/upk0HrEQew==}
+  picocolors@1.1.1:
+    resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
 
   picomatch@2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
@@ -2413,8 +2413,8 @@ packages:
     resolution: {integrity: sha512-A0RVJrX+IUkVZbW3ClroRWurercFhieevHB38sr2+l9eUClMqome3LmEmnhlNy+5Mr2EYN6B2Kaw9wYdd+VHiw==}
     engines: {node: '>=4'}
 
-  postcss@8.4.39:
-    resolution: {integrity: sha512-0vzE+lAiG7hZl1/9I8yzKLx3aR9Xbof3fBHKunvMfOCYAtMhrsnccJY2iTURb9EZd5+pLuiNV9/c/GZJOHsgIw==}
+  postcss@8.4.47:
+    resolution: {integrity: sha512-56rxCq7G/XfB4EkXq9Egn5GCqugWvDFjafDOThIdMBsI15iqPqR5r15TfSr1YPYeEI19YeaXMCbY6u88Y76GLQ==}
     engines: {node: ^10 || ^12 || >=14}
 
   prelude-ls@1.2.1:
@@ -2564,8 +2564,8 @@ packages:
   slashes@3.0.12:
     resolution: {integrity: sha512-Q9VME8WyGkc7pJf6QEkj3wE+2CnvZMI+XJhwdTPR8Z/kWQRXi7boAWLDibRPyHRTUTPx5FaU7MsyrjI3yLB4HA==}
 
-  source-map-js@1.2.0:
-    resolution: {integrity: sha512-itJW8lvSA0TXEphiRoawsCksnlf8SyvmFzIhltqAHluXd88pkCd+cXJVHTDwdCr0IzwptSm035IHQktUu1QUMg==}
+  source-map-js@1.2.1:
+    resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
     engines: {node: '>=0.10.0'}
 
   source-map-support@0.5.21:
@@ -2872,8 +2872,8 @@ packages:
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
 
-  vite@5.3.4:
-    resolution: {integrity: sha512-Cw+7zL3ZG9/NZBB8C+8QbQZmR54GwqIz+WMI4b3JgdYJvX+ny9AjJXqkGQlDXSXRP9rP0B4tbciRMOVEKulVOA==}
+  vite@5.3.6:
+    resolution: {integrity: sha512-es78AlrylO8mTVBygC0gTC0FENv0C6T496vvd33ydbjF/mIi9q3XQ9A3NWo5qLGFKywvz10J26813OkLvcQleA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -3020,7 +3020,7 @@ snapshots:
   '@babel/code-frame@7.24.2':
     dependencies:
       '@babel/highlight': 7.24.2
-      picocolors: 1.0.1
+      picocolors: 1.1.1
 
   '@babel/compat-data@7.24.4': {}
 
@@ -3152,7 +3152,7 @@ snapshots:
       '@babel/helper-validator-identifier': 7.24.7
       chalk: 2.4.2
       js-tokens: 4.0.0
-      picocolors: 1.0.1
+      picocolors: 1.1.1
 
   '@babel/parser@7.24.7':
     dependencies:
@@ -3795,18 +3795,18 @@ snapshots:
       - supports-color
       - typescript
 
-  '@vitejs/plugin-vue-jsx@3.1.0(vite@5.3.4(@types/node@22.8.7)(terser@5.30.3))':
+  '@vitejs/plugin-vue-jsx@3.1.0(vite@5.3.6(@types/node@22.8.7)(terser@5.30.3))':
     dependencies:
       '@babel/core': 7.24.4
       '@babel/plugin-transform-typescript': 7.24.4(@babel/core@7.24.4)
       '@vue/babel-plugin-jsx': 1.2.2(@babel/core@7.24.4)
-      vite: 5.3.4(@types/node@22.8.7)(terser@5.30.3)
+      vite: 5.3.6(@types/node@22.8.7)(terser@5.30.3)
     transitivePeerDependencies:
       - supports-color
 
-  '@vitejs/plugin-vue2@2.3.1(vite@5.3.4(@types/node@22.8.7)(terser@5.30.3))':
+  '@vitejs/plugin-vue2@2.3.1(vite@5.3.6(@types/node@22.8.7)(terser@5.30.3))':
     dependencies:
-      vite: 5.3.4(@types/node@22.8.7)(terser@5.30.3)
+      vite: 5.3.6(@types/node@22.8.7)(terser@5.30.3)
 
   '@vitest/expect@2.0.3':
     dependencies:
@@ -3841,13 +3841,13 @@ snapshots:
       loupe: 3.1.1
       tinyrainbow: 1.2.0
 
-  '@vue-macros/test-utils@1.4.0(@types/node@22.8.7)(terser@5.30.3)(vite@5.3.4(@types/node@22.8.7)(terser@5.30.3))(vitest@2.0.3(@types/node@22.8.7)(terser@5.30.3))':
+  '@vue-macros/test-utils@1.4.0(@types/node@22.8.7)(terser@5.30.3)(vite@5.3.6(@types/node@22.8.7)(terser@5.30.3))(vitest@2.0.3(@types/node@22.8.7)(terser@5.30.3))':
     dependencies:
       '@rollup/plugin-json': 6.1.0(rollup@4.19.0)
       '@rollup/plugin-node-resolve': 15.2.3(rollup@4.19.0)
       '@rollup/pluginutils': 5.1.0(rollup@4.19.0)
-      '@vitejs/plugin-vue-jsx': 3.1.0(vite@5.3.4(@types/node@22.8.7)(terser@5.30.3))
-      '@vitejs/plugin-vue2': 2.3.1(vite@5.3.4(@types/node@22.8.7)(terser@5.30.3))
+      '@vitejs/plugin-vue-jsx': 3.1.0(vite@5.3.6(@types/node@22.8.7)(terser@5.30.3))
+      '@vitejs/plugin-vue2': 2.3.1(vite@5.3.6(@types/node@22.8.7)(terser@5.30.3))
       esbuild: 0.20.2
       fast-glob: 3.3.2
       rollup: 4.19.0
@@ -3902,7 +3902,7 @@ snapshots:
       '@vue/shared': 3.4.23
       entities: 4.5.0
       estree-walker: 2.0.2
-      source-map-js: 1.2.0
+      source-map-js: 1.2.1
 
   '@vue/compiler-dom@3.4.23':
     dependencies:
@@ -3918,8 +3918,8 @@ snapshots:
       '@vue/shared': 3.4.23
       estree-walker: 2.0.2
       magic-string: 0.30.11
-      postcss: 8.4.39
-      source-map-js: 1.2.0
+      postcss: 8.4.47
+      source-map-js: 1.2.1
 
   '@vue/compiler-ssr@3.4.23':
     dependencies:
@@ -5480,7 +5480,7 @@ snapshots:
 
   perfect-debounce@1.0.0: {}
 
-  picocolors@1.0.1: {}
+  picocolors@1.1.1: {}
 
   picomatch@2.3.1: {}
 
@@ -5496,12 +5496,12 @@ snapshots:
 
   pluralize@8.0.0: {}
 
-  postcss-load-config@6.0.1(jiti@1.21.6)(postcss@8.4.39)(tsx@4.19.0):
+  postcss-load-config@6.0.1(jiti@1.21.6)(postcss@8.4.47)(tsx@4.19.0):
     dependencies:
       lilconfig: 3.1.1
     optionalDependencies:
       jiti: 1.21.6
-      postcss: 8.4.39
+      postcss: 8.4.47
       tsx: 4.19.0
 
   postcss-selector-parser@6.0.16:
@@ -5509,11 +5509,11 @@ snapshots:
       cssesc: 3.0.0
       util-deprecate: 1.0.2
 
-  postcss@8.4.39:
+  postcss@8.4.47:
     dependencies:
       nanoid: 3.3.7
-      picocolors: 1.0.1
-      source-map-js: 1.2.0
+      picocolors: 1.1.1
+      source-map-js: 1.2.1
 
   prelude-ls@1.2.1: {}
 
@@ -5668,7 +5668,7 @@ snapshots:
 
   slashes@3.0.12: {}
 
-  source-map-js@1.2.0: {}
+  source-map-js@1.2.1: {}
 
   source-map-support@0.5.21:
     dependencies:
@@ -5842,7 +5842,7 @@ snapshots:
 
   tslib@2.7.0: {}
 
-  tsup@8.2.1(jiti@1.21.6)(postcss@8.4.39)(tsx@4.19.0)(typescript@5.5.3):
+  tsup@8.2.1(jiti@1.21.6)(postcss@8.4.47)(tsx@4.19.0)(typescript@5.5.3):
     dependencies:
       bundle-require: 5.0.0(esbuild@0.23.0)
       cac: 6.7.14
@@ -5853,16 +5853,16 @@ snapshots:
       execa: 5.1.1
       fdir: 6.1.1(picomatch@4.0.2)
       joycon: 3.1.1
-      picocolors: 1.0.1
+      picocolors: 1.1.1
       picomatch: 4.0.2
-      postcss-load-config: 6.0.1(jiti@1.21.6)(postcss@8.4.39)(tsx@4.19.0)
+      postcss-load-config: 6.0.1(jiti@1.21.6)(postcss@8.4.47)(tsx@4.19.0)
       resolve-from: 5.0.0
       rollup: 4.19.0
       source-map: 0.8.0-beta.0
       sucrase: 3.35.0
       tree-kill: 1.2.2
     optionalDependencies:
-      postcss: 8.4.39
+      postcss: 8.4.47
       typescript: 5.5.3
     transitivePeerDependencies:
       - jiti
@@ -5946,7 +5946,7 @@ snapshots:
       '@vue/reactivity': 3.4.23
       debug: 4.3.6
       unplugin: 1.7.1
-      vite: 5.3.4(@types/node@22.8.7)(terser@5.30.3)
+      vite: 5.3.6(@types/node@22.8.7)(terser@5.30.3)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -5975,7 +5975,7 @@ snapshots:
     dependencies:
       browserslist: 4.23.0
       escalade: 3.1.2
-      picocolors: 1.0.1
+      picocolors: 1.1.1
 
   uri-js@4.4.1:
     dependencies:
@@ -5994,7 +5994,7 @@ snapshots:
       debug: 4.3.6
       pathe: 1.1.2
       tinyrainbow: 1.2.0
-      vite: 5.3.4(@types/node@22.8.7)(terser@5.30.3)
+      vite: 5.3.6(@types/node@22.8.7)(terser@5.30.3)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -6005,10 +6005,10 @@ snapshots:
       - supports-color
       - terser
 
-  vite@5.3.4(@types/node@22.8.7)(terser@5.30.3):
+  vite@5.3.6(@types/node@22.8.7)(terser@5.30.3):
     dependencies:
       esbuild: 0.21.5
-      postcss: 8.4.39
+      postcss: 8.4.47
       rollup: 4.19.0
     optionalDependencies:
       '@types/node': 22.8.7
@@ -6033,7 +6033,7 @@ snapshots:
       tinybench: 2.8.0
       tinypool: 1.0.0
       tinyrainbow: 1.2.0
-      vite: 5.3.4(@types/node@22.8.7)(terser@5.30.3)
+      vite: 5.3.6(@types/node@22.8.7)(terser@5.30.3)
       vite-node: 2.0.3(@types/node@22.8.7)(terser@5.30.3)
       why-is-node-running: 2.2.2
     optionalDependencies:
