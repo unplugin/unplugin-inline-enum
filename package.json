@@ -1,7 +1,7 @@
 {
   "name": "unplugin-inline-enum",
   "version": "0.2.0",
-  "packageManager": "pnpm@9.12.3",
+  "packageManager": "pnpm@9.13.2",
   "description": "Inline enum values to optimize bundle size.",
   "keywords": [
     "unplugin",
@@ -84,7 +84,7 @@
     "fast-glob": "^3.3.2",
     "magic-string": "^0.30.12",
     "picomatch": "^4.0.2",
-    "unplugin": "^1.15.0",
+    "unplugin": "^1.16.0",
     "unplugin-replace": "^0.3.3"
   },
   "devDependencies": {
@@ -96,14 +96,14 @@
     "@vue-macros/test-utils": "^1.7.0",
     "bumpp": "^9.8.1",
     "esbuild": "^0.24.0",
-    "eslint": "^9.14.0",
+    "eslint": "^9.15.0",
     "prettier": "^3.3.3",
-    "rollup": "^4.25.0",
+    "rollup": "^4.27.2",
     "tsup": "^8.3.5",
     "tsx": "^4.19.2",
     "typescript": "^5.6.3",
-    "vite": "^5.4.10",
-    "vitest": "^2.1.4",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.5",
     "webpack": "^5.96.1"
   },
   "engines": {
