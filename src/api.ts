@@ -5,12 +5,12 @@
  */
 
 export {
-  scanFiles,
   scanEnums,
-  type ScanOptions,
-  type EnumMember,
-  type EnumDeclaration,
+  scanFiles,
   type EnumData,
+  type EnumDeclaration,
+  type EnumMember,
+  type ScanOptions,
 } from './core/enum'
 
-export { type Options, resolveOptions } from './core/options'
+export { resolveOptions, type Options } from './core/options'

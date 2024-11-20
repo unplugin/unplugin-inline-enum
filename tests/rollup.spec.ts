@@ -1,6 +1,6 @@
 import path from 'node:path'
+import { rollupBuild, RollupEsbuildPlugin } from '@vue-macros/test-utils'
 import { expect, test } from 'vitest'
-import { RollupEsbuildPlugin, rollupBuild } from '@vue-macros/test-utils'
 import UnpluginInlineEnum from '../src/rollup'
 
 test('rollup', async () => {

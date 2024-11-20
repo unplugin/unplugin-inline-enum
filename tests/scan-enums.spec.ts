@@ -1,6 +1,6 @@
 import path from 'node:path'
 import { describe, expect, test } from 'vitest'
-import { type EnumData, scanEnums } from '../src/core/enum'
+import { scanEnums, type EnumData } from '../src/core/enum'
 import type { OptionsResolved } from '../src/core/options'
 
 describe('scanEnums', () => {

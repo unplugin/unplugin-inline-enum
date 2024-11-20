@@ -1,12 +1,12 @@
-import path from 'node:path'
 import assert from 'node:assert'
 import { readFileSync } from 'node:fs'
-import { execaSync } from 'execa'
+import path from 'node:path'
 import { babelParse, getLang, isTs } from 'ast-kit'
+import { execaSync } from 'execa'
 import fg from 'fast-glob'
 import picomatch from 'picomatch'
-import type { Expression, PrivateName } from '@babel/types'
 import type { OptionsResolved } from './options'
+import type { Expression, PrivateName } from '@babel/types'
 
 /**
  * Represents the scan options for the enum.

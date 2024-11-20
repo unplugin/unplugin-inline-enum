@@ -1,6 +1,6 @@
 import path from 'node:path'
-import { expect, test } from 'vitest'
 import { build } from 'esbuild'
+import { expect, test } from 'vitest'
 import UnpluginInlineEnum from '../src/esbuild'
 
 test('esbuild', async () => {

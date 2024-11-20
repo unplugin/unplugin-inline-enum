@@ -3,12 +3,12 @@
  * @module
  */
 
-import { type UnpluginInstance, createUnplugin } from 'unplugin'
 import { createFilter } from '@rollup/pluginutils'
 import MagicString from 'magic-string'
+import { createUnplugin, type UnpluginInstance } from 'unplugin'
 import ReplacePlugin from 'unplugin-replace'
-import { type Options, resolveOptions } from './core/options'
 import { scanEnums } from './core/enum'
+import { resolveOptions, type Options } from './core/options'
 
 /**
  * The main unplugin instance.
