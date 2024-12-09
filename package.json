@@ -84,7 +84,7 @@
     "fast-glob": "^3.3.2",
     "magic-string": "^0.30.14",
     "picomatch": "^4.0.2",
-    "unplugin": "^1.16.0",
+    "unplugin": "^2.0.0",
     "unplugin-replace": "^0.3.3"
   },
   "devDependencies": {
