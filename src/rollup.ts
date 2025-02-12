@@ -19,6 +19,6 @@ import unplugin from './index'
  * }
  * ```
  */
-const rollup = unplugin.rollup
+const rollup = unplugin.rollup as typeof unplugin.rollup
 export default rollup
 export { rollup as 'module.exports' }

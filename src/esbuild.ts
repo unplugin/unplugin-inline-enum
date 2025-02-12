@@ -19,6 +19,6 @@ import unplugin from './index'
  * })
  * ```
  */
-const esbuild = unplugin.esbuild
+const esbuild = unplugin.esbuild as typeof unplugin.esbuild
 export default esbuild
 export { esbuild as 'module.exports' }
