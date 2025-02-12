@@ -20,6 +20,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
+          cache: npm
 
       - run: npx changelogithub
         env:
@@ -35,8 +36,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup pnpm
-        run: corepack enable
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4.1.0
 
       - name: Set node
         uses: actions/setup-node@v4
