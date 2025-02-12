@@ -1,17 +1,18 @@
 import path from 'node:path'
-import { rollupBuild, RollupEsbuildPlugin } from '@vue-macros/test-utils'
+import { rollupBuild } from '@sxzz/test-utils'
+import Oxc from 'unplugin-oxc/rollup'
 import { expect, test } from 'vitest'
 import UnpluginInlineEnum from '../src/rollup'
 
 test('rollup', async () => {
-  const result = await rollupBuild(
+  const { snapshot } = await rollupBuild(
     path.resolve(__dirname, 'fixtures/main.ts'),
     [
       UnpluginInlineEnum({
         scanDir: path.resolve(__dirname, 'fixtures'),
         scanMode: 'fs',
       }),
-      RollupEsbuildPlugin(),
+      Oxc(),
       {
         name: 'test:mod-options',
         options(options) {
@@ -20,5 +21,5 @@ test('rollup', async () => {
       },
     ],
   )
-  expect(result).toMatchSnapshot()
+  expect(snapshot).toMatchSnapshot()
 })

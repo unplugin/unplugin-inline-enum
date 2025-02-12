@@ -2,7 +2,11 @@
 
 exports[`rollup 1`] = `
 "// main.js
-const values = ["foo", 100, 4];
+const values = [
+	"foo",
+	100,
+	4
+];
 
 console.log("foo", 100, 4);
 console.log(values);
