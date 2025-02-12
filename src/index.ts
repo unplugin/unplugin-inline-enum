@@ -3,10 +3,10 @@
  * @module
  */
 
-import { createFilter } from '@rollup/pluginutils'
 import MagicString from 'magic-string'
 import { createUnplugin, type UnpluginInstance } from 'unplugin'
 import ReplacePlugin from 'unplugin-replace'
+import { createFilter } from 'unplugin-utils'
 import { scanEnums } from './core/enum'
 import { resolveOptions, type Options } from './core/options'
 

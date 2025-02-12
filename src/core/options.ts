@@ -1,5 +1,5 @@
 import process from 'node:process'
-import type { FilterPattern } from '@rollup/pluginutils'
+import type { FilterPattern } from 'unplugin-utils'
 
 /**
  * Represents the options for the plugin.

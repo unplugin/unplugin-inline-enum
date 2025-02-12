@@ -78,14 +78,14 @@
     "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
-    "@rollup/pluginutils": "^5.1.4",
     "ast-kit": "^1.4.0",
     "execa": "^9.5.2",
     "fast-glob": "^3.3.3",
     "magic-string": "^0.30.17",
     "picomatch": "^4.0.2",
     "unplugin": "^2.2.0",
-    "unplugin-replace": "^0.5.0"
+    "unplugin-replace": "^0.5.0",
+    "unplugin-utils": "^0.2.4"
   },
   "devDependencies": {
     "@babel/types": "^7.26.8",
