@@ -19,4 +19,6 @@ import unplugin from './index'
  * })
  * ```
  */
-export default unplugin.esbuild
+const esbuild = unplugin.esbuild
+export default esbuild
+export { esbuild as 'module.exports' }

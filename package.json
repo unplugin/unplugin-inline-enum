@@ -3,6 +3,7 @@
   "version": "0.2.0",
   "packageManager": "pnpm@10.3.0",
   "description": "Inline enum values to optimize bundle size.",
+  "type": "module",
   "keywords": [
     "unplugin",
     "rollup",
@@ -24,37 +25,16 @@
     "dist"
   ],
   "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs"
-    },
-    "./vite": {
-      "require": "./dist/vite.js",
-      "import": "./dist/vite.mjs"
-    },
-    "./webpack": {
-      "require": "./dist/webpack.js",
-      "import": "./dist/webpack.mjs"
-    },
-    "./rollup": {
-      "require": "./dist/rollup.js",
-      "import": "./dist/rollup.mjs"
-    },
-    "./esbuild": {
-      "require": "./dist/esbuild.js",
-      "import": "./dist/esbuild.mjs"
-    },
-    "./api": {
-      "require": "./dist/api.js",
-      "import": "./dist/api.mjs"
-    },
-    "./*": [
-      "./*",
-      "./*.d.ts"
-    ]
+    ".": "./dist/index.js",
+    "./vite": "./dist/vite.js",
+    "./webpack": "./dist/webpack.js",
+    "./rollup": "./dist/rollup.js",
+    "./esbuild": "./dist/esbuild.js",
+    "./api": "./dist/api.js",
+    "./*": "./*"
   },
   "typesVersions": {
     "*": {
@@ -70,8 +50,8 @@
   "scripts": {
     "lint": "eslint --cache .",
     "lint:fix": "pnpm run lint --fix",
-    "build": "tsup",
-    "dev": "tsup --watch",
+    "build": "tsdown",
+    "dev": "tsdown --watch",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
     "release": "bumpp && pnpm publish",
@@ -99,7 +79,7 @@
     "eslint": "^9.20.1",
     "prettier": "^3.5.0",
     "rollup": "^4.34.6",
-    "tsup": "^8.3.6",
+    "tsdown": "^0.5.9",
     "tsx": "^4.19.2",
     "typescript": "^5.7.3",
     "vite": "^6.1.0",
@@ -107,7 +87,7 @@
     "webpack": "^5.97.1"
   },
   "engines": {
-    "node": ">=16.14.0"
+    "node": ">=18.12.0"
   },
   "prettier": "@sxzz/prettier-config"
 }

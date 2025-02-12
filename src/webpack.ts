@@ -17,4 +17,6 @@ import unplugin from './index'
  * }
  * ```
  */
-export default unplugin.webpack
+const webpack = unplugin.webpack
+export default webpack
+export { webpack as 'module.exports' }
