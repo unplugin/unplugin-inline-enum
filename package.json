@@ -1,6 +1,6 @@
 {
   "name": "unplugin-inline-enum",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "packageManager": "pnpm@10.5.2",
   "description": "Inline enum values to optimize bundle size.",
   "type": "module",
