@@ -74,7 +74,7 @@
     "@sxzz/prettier-config": "^2.2.1",
     "@sxzz/test-utils": "^0.5.4",
     "@types/node": "^22.13.14",
-    "@types/picomatch": "^3.0.2",
+    "@types/picomatch": "^4.0.0",
     "bumpp": "^10.1.0",
     "esbuild": "^0.25.2",
     "eslint": "^9.23.0",
