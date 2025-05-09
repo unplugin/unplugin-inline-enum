@@ -1,5 +1,5 @@
 import process from 'node:process'
-import type { FilterPattern } from 'unplugin-utils'
+import type { FilterPattern } from 'unplugin'
 
 /**
  * Represents the options for the plugin.
