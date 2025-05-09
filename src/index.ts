@@ -6,7 +6,6 @@
 import MagicString from 'magic-string'
 import { createUnplugin, type UnpluginInstance } from 'unplugin'
 import ReplacePlugin from 'unplugin-replace'
-import { createFilter } from 'unplugin-utils'
 import { scanEnums } from './core/enum'
 import { resolveOptions, type Options } from './core/options'
 
@@ -18,8 +17,6 @@ const plugin: UnpluginInstance<Options | undefined, true> = createUnplugin<
   true
 >((rawOptions = {}, meta) => {
   const options = resolveOptions(rawOptions)
-  const filter = createFilter(options.include, options.exclude)
-
   const { declarations, defines } = scanEnums(options)
 
   const replacePlugin = ReplacePlugin.raw(
@@ -38,52 +35,56 @@ const plugin: UnpluginInstance<Options | undefined, true> = createUnplugin<
       name,
       enforce: options.enforce,
 
-      transformInclude(id) {
-        return filter(id)
-      },
+      transform: {
+        filter: {
+          id: {
+            include: options.include,
+            exclude: options.exclude,
+          },
+        },
+        handler(code, id) {
+          let s: MagicString | undefined
 
-      transform(code, id) {
-        let s: MagicString | undefined
+          if (id in declarations) {
+            s ||= new MagicString(code)
+            for (const declaration of declarations[id]) {
+              const {
+                range: [start, end],
+                id,
+                members,
+              } = declaration
+              s.update(
+                start,
+                end,
+                `export const ${id} = {${members
+                  .flatMap(({ name, value }) => {
+                    const forwardMapping = `${JSON.stringify(name)}: ${JSON.stringify(value)}`
+                    const reverseMapping = `${JSON.stringify(value.toString())}: ${JSON.stringify(name)}`
 
-        if (id in declarations) {
-          s ||= new MagicString(code)
-          for (const declaration of declarations[id]) {
-            const {
-              range: [start, end],
-              id,
-              members,
-            } = declaration
-            s.update(
-              start,
-              end,
-              `export const ${id} = {${members
-                .flatMap(({ name, value }) => {
-                  const forwardMapping = `${JSON.stringify(name)}: ${JSON.stringify(value)}`
-                  const reverseMapping = `${JSON.stringify(value.toString())}: ${JSON.stringify(name)}`
-
-                  // see https://www.typescriptlang.org/docs/handbook/enums.html#reverse-mappings
-                  return typeof value === 'string'
-                    ? [
-                        forwardMapping,
-                        // string enum members do not get a reverse mapping generated at all
-                      ]
-                    : [
-                        forwardMapping,
-                        // other enum members should support enum reverse mapping
-                        reverseMapping,
-                      ]
-                })
-                .join(',\n')}}`,
-            )
+                    // see https://www.typescriptlang.org/docs/handbook/enums.html#reverse-mappings
+                    return typeof value === 'string'
+                      ? [
+                          forwardMapping,
+                          // string enum members do not get a reverse mapping generated at all
+                        ]
+                      : [
+                          forwardMapping,
+                          // other enum members should support enum reverse mapping
+                          reverseMapping,
+                        ]
+                  })
+                  .join(',\n')}}`,
+              )
+            }
           }
-        }
 
-        if (s) {
-          return {
-            code: s.toString(),
-            map: s.generateMap(),
+          if (s) {
+            return {
+              code: s.toString(),
+              map: s.generateMap(),
+            }
           }
-        }
+        },
       },
     },
   ]

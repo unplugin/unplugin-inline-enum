@@ -29,9 +29,6 @@ importers:
       unplugin-replace:
         specifier: ^0.6.0
         version: 0.6.0
-      unplugin-utils:
-        specifier: ^0.2.4
-        version: 0.2.4
     devDependencies:
       '@babel/types':
         specifier: ^7.27.1
