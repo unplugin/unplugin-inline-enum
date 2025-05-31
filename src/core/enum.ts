@@ -1,8 +1,8 @@
 import assert from 'node:assert'
+import { spawnSync } from 'node:child_process'
 import { readFileSync } from 'node:fs'
 import path from 'node:path'
 import { babelParse, getLang, isTs } from 'ast-kit'
-import { execaSync } from 'execa'
 import fg from 'fast-glob'
 import picomatch from 'picomatch'
 import type { OptionsResolved } from './options'
@@ -216,15 +216,12 @@ export function scanFiles(options: ScanOptions): string[] {
       })
       .map((file) => path.resolve(options.scanDir, file))
   } else {
-    const { stdout, stderr, exitCode } = execaSync(
+    const { stdout, stderr, status } = spawnSync(
       'git',
       ['grep', '--untracked', 'export enum'],
-      {
-        cwd: options.scanDir,
-        reject: false,
-      },
+      { cwd: options.scanDir, encoding: 'utf8' },
     )
-    if (exitCode !== 0) {
+    if (status !== 0) {
       if (stderr) throw new Error(`git grep failed: ${stderr}`)
       else return []
     }

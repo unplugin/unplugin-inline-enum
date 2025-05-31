@@ -60,7 +60,6 @@
   },
   "dependencies": {
     "ast-kit": "^2.0.0",
-    "execa": "^9.5.3",
     "fast-glob": "^3.3.3",
     "magic-string": "^0.30.17",
     "picomatch": "^4.0.2",
