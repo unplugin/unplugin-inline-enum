@@ -67,24 +67,24 @@
     "unplugin-replace": "^0.6.0"
   },
   "devDependencies": {
-    "@babel/types": "^7.28.1",
-    "@sxzz/eslint-config": "^7.0.6",
+    "@babel/types": "^7.28.2",
+    "@sxzz/eslint-config": "^7.1.0",
     "@sxzz/prettier-config": "^2.2.3",
     "@sxzz/test-utils": "^0.5.7",
     "@types/node": "^22.16.5",
     "@types/picomatch": "^4.0.1",
     "bumpp": "^10.2.0",
     "esbuild": "^0.25.8",
-    "eslint": "^9.31.0",
+    "eslint": "^9.32.0",
     "prettier": "^3.6.2",
-    "rollup": "^4.45.1",
-    "tsdown": "^0.12.9",
+    "rollup": "^4.46.1",
+    "tsdown": "^0.13.0",
     "tsx": "^4.20.3",
     "typescript": "^5.8.3",
-    "unplugin-oxc": "^0.4.6",
-    "vite": "^7.0.5",
+    "unplugin-oxc": "^0.4.8",
+    "vite": "^7.0.6",
     "vitest": "^3.2.4",
-    "webpack": "^5.100.2"
+    "webpack": "^5.101.0"
   },
   "engines": {
     "node": ">=20.18.0"
