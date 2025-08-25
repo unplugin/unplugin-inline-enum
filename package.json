@@ -1,7 +1,7 @@
 {
   "name": "unplugin-inline-enum",
   "version": "0.4.1",
-  "packageManager": "pnpm@10.14.0",
+  "packageManager": "pnpm@10.15.0",
   "description": "Inline enum values to optimize bundle size.",
   "type": "module",
   "keywords": [
@@ -61,30 +61,30 @@
   "dependencies": {
     "ast-kit": "^2.1.2",
     "fast-glob": "^3.3.3",
-    "magic-string": "^0.30.17",
+    "magic-string": "^0.30.18",
     "picomatch": "^4.0.3",
-    "unplugin": "^2.3.6",
-    "unplugin-replace": "^0.6.0"
+    "unplugin": "^2.3.8",
+    "unplugin-replace": "^0.6.1"
   },
   "devDependencies": {
     "@babel/types": "^7.28.2",
-    "@sxzz/eslint-config": "^7.1.2",
-    "@sxzz/prettier-config": "^2.2.3",
-    "@sxzz/test-utils": "^0.5.9",
+    "@sxzz/eslint-config": "^7.1.4",
+    "@sxzz/prettier-config": "^2.2.4",
+    "@sxzz/test-utils": "^0.5.10",
     "@types/node": "^22.17.2",
     "@types/picomatch": "^4.0.2",
     "bumpp": "^10.2.3",
     "esbuild": "^0.25.9",
-    "eslint": "^9.33.0",
+    "eslint": "^9.34.0",
     "prettier": "^3.6.2",
-    "rollup": "^4.46.2",
+    "rollup": "^4.48.0",
     "tsdown": "^0.14.1",
-    "tsx": "^4.20.4",
+    "tsx": "^4.20.5",
     "typescript": "^5.9.2",
-    "unplugin-oxc": "^0.5.0",
-    "vite": "^7.1.2",
+    "unplugin-oxc": "^0.5.1",
+    "vite": "^7.1.3",
     "vitest": "^3.2.4",
-    "webpack": "^5.101.2"
+    "webpack": "^5.101.3"
   },
   "engines": {
     "node": ">=20.18.0"
