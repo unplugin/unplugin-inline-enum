@@ -1,0 +1,13 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`rolldown 1`] = `
+"// main.js
+const values = [
+	"foo",
+	100,
+	4
+];
+console.log("foo", 100, 4);
+console.log(values);
+"
+`;

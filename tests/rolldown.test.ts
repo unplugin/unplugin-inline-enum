@@ -1,11 +1,11 @@
 import path from 'node:path'
-import { rollupBuild } from '@sxzz/test-utils'
-import Oxc from 'unplugin-oxc/rollup'
+import { rolldownBuild } from '@sxzz/test-utils'
+import Oxc from 'unplugin-oxc/rolldown'
 import { expect, test } from 'vitest'
-import UnpluginInlineEnum from '../src/rollup'
+import UnpluginInlineEnum from '../src/rolldown'
 
-test('rollup', async () => {
-  const { snapshot } = await rollupBuild(
+test('rolldown', async () => {
+  const { snapshot } = await rolldownBuild(
     path.resolve(__dirname, 'fixtures/main.ts'),
     [
       UnpluginInlineEnum({
@@ -14,9 +14,8 @@ test('rollup', async () => {
       }),
       Oxc(),
     ],
-    {
-      treeshake: 'smallest',
-    },
+    {},
+    { minify: 'dce-only' },
   )
   expect(snapshot).toMatchSnapshot()
 })
