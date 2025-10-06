@@ -79,7 +79,6 @@
     "prettier": "^3.6.2",
     "rollup": "^4.52.4",
     "tsdown": "^0.15.6",
-    "tsx": "^4.20.6",
     "typescript": "^5.9.3",
     "unplugin-oxc": "^0.5.2",
     "vite": "^7.1.9",
