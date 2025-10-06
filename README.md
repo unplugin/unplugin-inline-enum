@@ -1,6 +1,9 @@
-# unplugin-inline-enum [![npm](https://img.shields.io/npm/v/unplugin-inline-enum.svg)](https://npmjs.com/package/unplugin-inline-enum) [![jsr](https://jsr.io/badges/@unplugin/inline-enum)](https://jsr.io/@unplugin/inline-enum)
+# unplugin-inline-enum
 
-[![Unit Test](https://github.com/unplugin/unplugin-inline-enum/actions/workflows/unit-test.yml/badge.svg)](https://github.com/unplugin/unplugin-inline-enum/actions/workflows/unit-test.yml)
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![jsr][jsr-src]][jsr-href]
+[![Unit Test][unit-test-src]][unit-test-href]
 
 Inline enum values to optimize bundle size.
 
@@ -133,4 +136,15 @@ Thanks to [@xiaoxiangmoe](https://github.com/xiaoxiangmoe) and
 
 ## License
 
-[MIT](./LICENSE) License © 2024-PRESENT [三咲智子](https://github.com/sxzz)
+[MIT](./LICENSE) License © 2024-PRESENT [Kevin Deng](https://github.com/sxzz)
+
+<!-- Badges -->
+
+[npm-version-src]: https://img.shields.io/npm/v/unplugin-inline-enum.svg
+[npm-version-href]: https://npmjs.com/package/unplugin-inline-enum
+[npm-downloads-src]: https://img.shields.io/npm/dm/unplugin-inline-enum
+[npm-downloads-href]: https://www.npmcharts.com/compare/unplugin-inline-enum?interval=30
+[jsr-src]: https://jsr.io/badges/@unplugin/inline-enum
+[jsr-href]: https://jsr.io/@unplugin/inline-enum
+[unit-test-src]: https://github.com/unplugin/unplugin-inline-enum/actions/workflows/unit-test.yml/badge.svg
+[unit-test-href]: https://github.com/unplugin/unplugin-inline-enum/actions/workflows/unit-test.yml
