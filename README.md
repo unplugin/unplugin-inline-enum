@@ -73,6 +73,20 @@ export default {
 <br></details>
 
 <details>
+<summary>Rolldown</summary><br>
+
+```ts
+// rolldown.config.js
+import InlineEnum from 'unplugin-inline-enum/rolldown'
+
+export default {
+  plugins: [InlineEnum()],
+}
+```
+
+<br></details>
+
+<details>
 <summary>esbuild</summary><br>
 
 ```ts

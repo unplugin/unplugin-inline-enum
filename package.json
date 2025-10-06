@@ -32,6 +32,7 @@
     ".": "./dist/index.js",
     "./api": "./dist/api.js",
     "./esbuild": "./dist/esbuild.js",
+    "./rolldown": "./dist/rolldown.js",
     "./rollup": "./dist/rollup.js",
     "./vite": "./dist/vite.js",
     "./webpack": "./dist/webpack.js",
