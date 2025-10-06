@@ -1,5 +1,5 @@
 /**
- * This entry file is for main unplugin.
+ * This entry file is for main InlineEnum.
  * @module
  */
 
@@ -12,7 +12,7 @@ import { resolveOptions, type Options } from './core/options'
 /**
  * The main unplugin instance.
  */
-const plugin: UnpluginInstance<Options | undefined, true> = createUnplugin<
+const InlineEnum: UnpluginInstance<Options | undefined, true> = createUnplugin<
   Options | undefined,
   true
 >((rawOptions = {}, meta) => {
@@ -90,4 +90,4 @@ const plugin: UnpluginInstance<Options | undefined, true> = createUnplugin<
   ]
 })
 
-export default plugin
+export { InlineEnum, resolveOptions, type Options }

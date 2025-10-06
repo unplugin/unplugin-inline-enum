@@ -4,7 +4,7 @@
  * @module
  */
 
-import unplugin from './index'
+import { InlineEnum } from './index'
 
 /**
  * Rollup plugin
@@ -19,6 +19,6 @@ import unplugin from './index'
  * }
  * ```
  */
-const rollup = unplugin.rollup as typeof unplugin.rollup
+const rollup = InlineEnum.rollup as typeof InlineEnum.rollup
 export default rollup
 export { rollup as 'module.exports' }

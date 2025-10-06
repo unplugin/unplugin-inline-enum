@@ -4,7 +4,7 @@
  * @module
  */
 
-import unplugin from './index'
+import { InlineEnum } from './index'
 
 /**
  * Vite plugin
@@ -19,6 +19,6 @@ import unplugin from './index'
  * })
  * ```
  */
-const vite = unplugin.vite as typeof unplugin.vite
+const vite = InlineEnum.vite as typeof InlineEnum.vite
 export default vite
 export { vite as 'module.exports' }

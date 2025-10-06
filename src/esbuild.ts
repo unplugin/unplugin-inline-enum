@@ -4,7 +4,7 @@
  * @module
  */
 
-import unplugin from './index'
+import { InlineEnum } from './index'
 
 /**
  * Esbuild plugin
@@ -19,6 +19,6 @@ import unplugin from './index'
  * })
  * ```
  */
-const esbuild = unplugin.esbuild as typeof unplugin.esbuild
+const esbuild = InlineEnum.esbuild as typeof InlineEnum.esbuild
 export default esbuild
 export { esbuild as 'module.exports' }

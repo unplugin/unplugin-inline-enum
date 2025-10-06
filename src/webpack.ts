@@ -4,7 +4,7 @@
  * @module
  */
 
-import unplugin from './index'
+import { InlineEnum } from './index'
 
 /**
  * Webpack plugin
@@ -17,6 +17,6 @@ import unplugin from './index'
  * }
  * ```
  */
-const webpack = unplugin.webpack as typeof unplugin.webpack
+const webpack = InlineEnum.webpack as typeof InlineEnum.webpack
 export default webpack
 export { webpack as 'module.exports' }
