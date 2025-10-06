@@ -3,8 +3,8 @@ import { spawnSync } from 'node:child_process'
 import { readFileSync } from 'node:fs'
 import path from 'node:path'
 import { babelParse, getLang, isTs } from 'ast-kit'
-import fg from 'fast-glob'
 import picomatch from 'picomatch'
+import { globSync } from 'tinyglobby'
 import type { OptionsResolved } from './options'
 import type { Expression, PrivateName } from '@babel/types'
 
@@ -217,11 +217,10 @@ export function scanEnums(options: ScanOptions): EnumData {
  */
 export function scanFiles(options: ScanOptions): string[] {
   if (options.scanMode === 'fs') {
-    return fg
-      .sync(options.scanPattern, {
-        cwd: options.scanDir,
-      })
-      .map((file) => path.resolve(options.scanDir, file))
+    return globSync(options.scanPattern, {
+      cwd: options.scanDir,
+      expandDirectories: false,
+    }).map((file) => path.resolve(options.scanDir, file))
   } else {
     const { stdout, stderr, status } = spawnSync(
       'git',
