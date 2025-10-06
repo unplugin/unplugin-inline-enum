@@ -2,7 +2,7 @@ import assert from 'node:assert'
 import { spawnSync } from 'node:child_process'
 import { readFileSync } from 'node:fs'
 import path from 'node:path'
-import { babelParse, getLang, isTs } from 'ast-kit'
+import { babelParse, getLang, isDts, isTs } from 'ast-kit'
 import picomatch from 'picomatch'
 import { globSync } from 'tinyglobby'
 import type { OptionsResolved } from './options'
@@ -70,7 +70,7 @@ export function scanEnums(options: ScanOptions): EnumData {
   // 2. parse matched files to collect enum info
   for (const file of files) {
     const lang = getLang(file)
-    if (!isTs(lang)) continue
+    if (!isTs(lang) || isDts(file)) continue
 
     const content = readFileSync(file, 'utf8')
     const ast = babelParse(content, lang)
