@@ -20,7 +20,7 @@ export interface Options {
   scanDir?: string
   /**
    * The pattern used to match enum files.
-   * @default '**\/*.{cts,mts,ts,tsx}'
+   * @default ['**\/*.{cts,mts,ts,tsx}', '!**\/node_modules']
    */
   scanPattern?: string | string[]
 }
@@ -48,6 +48,9 @@ export function resolveOptions(options: Options): OptionsResolved {
 
     scanMode: options.scanMode || 'fs',
     scanDir: options.scanDir || process.cwd(),
-    scanPattern: options.scanPattern || '**/*.{cts,mts,ts,tsx}',
+    scanPattern: options.scanPattern || [
+      '**/*.{cts,mts,ts,tsx}',
+      '!**/node_modules',
+    ],
   }
 }
