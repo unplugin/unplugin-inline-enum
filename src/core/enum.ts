@@ -72,7 +72,7 @@ export function scanEnums(options: ScanOptions): EnumData {
     const lang = getLang(file)
     if (!isTs(lang)) continue
 
-    const content = readFileSync(file, 'utf-8')
+    const content = readFileSync(file, 'utf8')
     const ast = babelParse(content, lang)
 
     const enumIds: Set<string> = new Set()
@@ -113,59 +113,66 @@ export function scanEnums(options: ScanOptions): EnumData {
           const init = e.initializer
           if (init) {
             let value: string | number
-            if (
-              init.type === 'StringLiteral' ||
-              init.type === 'NumericLiteral'
-            ) {
-              value = init.value
-            }
-            // e.g. 1 << 2
-            else if (init.type === 'BinaryExpression') {
-              const resolveValue = (node: Expression | PrivateName) => {
-                assert.ok(typeof node.start === 'number')
-                assert.ok(typeof node.end === 'number')
-                if (
-                  node.type === 'NumericLiteral' ||
-                  node.type === 'StringLiteral'
-                ) {
-                  return node.value
-                } else if (node.type === 'MemberExpression') {
-                  const exp = content.slice(
-                    node.start,
-                    node.end,
-                  ) as `${string}.${string}`
-                  if (!(exp in defines)) {
+            switch (init.type) {
+              case 'StringLiteral':
+              case 'NumericLiteral': {
+                value = init.value
+
+                break
+              }
+              case 'BinaryExpression': {
+                const resolveValue = (node: Expression | PrivateName) => {
+                  assert.ok(typeof node.start === 'number')
+                  assert.ok(typeof node.end === 'number')
+                  if (
+                    node.type === 'NumericLiteral' ||
+                    node.type === 'StringLiteral'
+                  ) {
+                    return node.value
+                  } else if (node.type === 'MemberExpression') {
+                    const exp = content.slice(
+                      node.start,
+                      node.end,
+                    ) as `${string}.${string}`
+                    if (!(exp in defines)) {
+                      throw new Error(
+                        `unhandled enum initialization expression ${exp} in ${file}`,
+                      )
+                    }
+                    return defines[exp]
+                  } else {
                     throw new Error(
-                      `unhandled enum initialization expression ${exp} in ${file}`,
+                      `unhandled BinaryExpression operand type ${node.type} in ${file}`,
                     )
                   }
-                  return defines[exp]
+                }
+                const exp = `${resolveValue(init.left)}${
+                  init.operator
+                }${resolveValue(init.right)}`
+                value = evaluate(exp)
+
+                break
+              }
+              case 'UnaryExpression': {
+                if (
+                  init.argument.type === 'StringLiteral' ||
+                  init.argument.type === 'NumericLiteral'
+                ) {
+                  const exp = `${init.operator}${init.argument.value}`
+                  value = evaluate(exp)
                 } else {
                   throw new Error(
-                    `unhandled BinaryExpression operand type ${node.type} in ${file}`,
+                    `unhandled UnaryExpression argument type ${init.argument.type} in ${file}`,
                   )
                 }
+
+                break
               }
-              const exp = `${resolveValue(init.left)}${
-                init.operator
-              }${resolveValue(init.right)}`
-              value = evaluate(exp)
-            } else if (init.type === 'UnaryExpression') {
-              if (
-                init.argument.type === 'StringLiteral' ||
-                init.argument.type === 'NumericLiteral'
-              ) {
-                const exp = `${init.operator}${init.argument.value}`
-                value = evaluate(exp)
-              } else {
+              default: {
                 throw new Error(
-                  `unhandled UnaryExpression argument type ${init.argument.type} in ${file}`,
+                  `unhandled initializer type ${init.type} for ${fullKey} in ${file}`,
                 )
               }
-            } else {
-              throw new Error(
-                `unhandled initializer type ${init.type} for ${fullKey} in ${file}`,
-              )
             }
             lastInitialized = value
             saveValue(lastInitialized)
