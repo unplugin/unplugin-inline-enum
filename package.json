@@ -1,7 +1,7 @@
 {
   "name": "unplugin-inline-enum",
   "version": "0.6.2",
-  "packageManager": "pnpm@10.18.1",
+  "packageManager": "pnpm@10.18.2",
   "description": "Inline enum values to optimize bundle size.",
   "type": "module",
   "keywords": [
@@ -72,7 +72,7 @@
     "@sxzz/eslint-config": "^7.2.7",
     "@sxzz/prettier-config": "^2.2.4",
     "@sxzz/test-utils": "^0.5.11",
-    "@types/node": "^24.7.0",
+    "@types/node": "^24.7.2",
     "@types/picomatch": "^4.0.2",
     "bumpp": "^10.3.1",
     "esbuild": "^0.25.10",
@@ -81,10 +81,10 @@
     "rollup": "^4.52.4",
     "tsdown": "^0.15.6",
     "typescript": "^5.9.3",
-    "unplugin-oxc": "^0.5.2",
+    "unplugin-oxc": "^0.5.3",
     "vite": "^7.1.9",
     "vitest": "^3.2.4",
-    "webpack": "^5.102.0"
+    "webpack": "^5.102.1"
   },
   "engines": {
     "node": ">=20.19.0"
