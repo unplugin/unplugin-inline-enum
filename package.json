@@ -23,22 +23,22 @@
     "webpack"
   ],
   "exports": {
-    ".": "./dist/index.js",
-    "./api": "./dist/api.js",
-    "./esbuild": "./dist/esbuild.js",
-    "./rolldown": "./dist/rolldown.js",
-    "./rollup": "./dist/rollup.js",
-    "./vite": "./dist/vite.js",
-    "./webpack": "./dist/webpack.js",
+    ".": "./dist/index.mjs",
+    "./api": "./dist/api.mjs",
+    "./esbuild": "./dist/esbuild.mjs",
+    "./rolldown": "./dist/rolldown.mjs",
+    "./rollup": "./dist/rollup.mjs",
+    "./vite": "./dist/vite.mjs",
+    "./webpack": "./dist/webpack.mjs",
     "./package.json": "./package.json"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
   "typesVersions": {
     "*": {
       "*": [
-        "./dist/*",
+        "./dist/*.d.mts",
         "./*"
       ]
     }
@@ -58,7 +58,7 @@
     "build": "tsdown",
     "dev": "tsdown --watch",
     "test": "vitest",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsgo --noEmit",
     "release": "bumpp",
     "prepublishOnly": "pnpm run build"
   },
@@ -77,6 +77,7 @@
     "@sxzz/test-utils": "^0.5.14",
     "@types/node": "^25.0.1",
     "@types/picomatch": "^4.0.2",
+    "@typescript/native-preview": "7.0.0-dev.20251212.1",
     "bumpp": "^10.3.2",
     "esbuild": "^0.27.1",
     "eslint": "^9.39.2",
