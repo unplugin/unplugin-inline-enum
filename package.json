@@ -1,9 +1,20 @@
 {
   "name": "unplugin-inline-enum",
-  "version": "0.6.2",
-  "packageManager": "pnpm@10.24.0",
-  "description": "Inline enum values to optimize bundle size.",
   "type": "module",
+  "version": "0.6.2",
+  "packageManager": "pnpm@10.25.0",
+  "description": "Inline enum values to optimize bundle size.",
+  "author": "Kevin Deng <sxzz@sxzz.moe>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/sxzz",
+  "homepage": "https://github.com/unplugin/unplugin-inline-enum#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unplugin/unplugin-inline-enum.git"
+  },
+  "bugs": {
+    "url": "https://github.com/unplugin/unplugin-inline-enum/issues"
+  },
   "keywords": [
     "unplugin",
     "rollup",
@@ -11,23 +22,6 @@
     "esbuild",
     "webpack"
   ],
-  "license": "MIT",
-  "homepage": "https://github.com/unplugin/unplugin-inline-enum#readme",
-  "bugs": {
-    "url": "https://github.com/unplugin/unplugin-inline-enum/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/unplugin/unplugin-inline-enum.git"
-  },
-  "author": "Kevin Deng <sxzz@sxzz.moe>",
-  "funding": "https://github.com/sponsors/sxzz",
-  "files": [
-    "dist"
-  ],
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
   "exports": {
     ".": "./dist/index.js",
     "./api": "./dist/api.js",
@@ -38,6 +32,9 @@
     "./webpack": "./dist/webpack.js",
     "./package.json": "./package.json"
   },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "typesVersions": {
     "*": {
       "*": [
@@ -46,8 +43,14 @@
       ]
     }
   },
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
     "access": "public"
+  },
+  "engines": {
+    "node": ">=20.19.0"
   },
   "scripts": {
     "lint": "eslint --cache .",
@@ -69,25 +72,22 @@
   },
   "devDependencies": {
     "@babel/types": "^7.28.5",
-    "@sxzz/eslint-config": "^7.4.0",
+    "@sxzz/eslint-config": "^7.4.1",
     "@sxzz/prettier-config": "^2.2.6",
-    "@sxzz/test-utils": "^0.5.13",
-    "@types/node": "^24.10.1",
+    "@sxzz/test-utils": "^0.5.14",
+    "@types/node": "^25.0.1",
     "@types/picomatch": "^4.0.2",
     "bumpp": "^10.3.2",
-    "esbuild": "^0.27.0",
-    "eslint": "^9.39.1",
-    "prettier": "^3.7.3",
+    "esbuild": "^0.27.1",
+    "eslint": "^9.39.2",
+    "prettier": "^3.7.4",
     "rollup": "^4.53.3",
-    "tsdown": "^0.16.8",
+    "tsdown": "^0.17.3",
     "typescript": "^5.9.3",
     "unplugin-oxc": "^0.5.5",
-    "vite": "^7.2.6",
-    "vitest": "^4.0.14",
+    "vite": "^7.2.7",
+    "vitest": "^4.0.15",
     "webpack": "^5.103.0"
-  },
-  "engines": {
-    "node": ">=20.19.0"
   },
   "prettier": "@sxzz/prettier-config"
 }
