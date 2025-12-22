@@ -70,8 +70,8 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
       unplugin-oxc:
-        specifier: ^0.5.6
-        version: 0.5.6
+        specifier: ^0.5.7
+        version: 0.5.7
       vite:
         specifier: ^7.3.0
         version: 7.3.0(@types/node@25.0.3)(jiti@2.6.1)(terser@5.44.1)(yaml@2.8.2)
@@ -2519,8 +2519,8 @@ packages:
   unist-util-visit@5.0.0:
     resolution: {integrity: sha512-MR04uvD+07cwl/yhVuVWAtw+3GOR/knlL55Nd/wAdblk27GCVt3lqpTivy/tkJcZoNPzTwS1Y+KMojlLDhoTzg==}
 
-  unplugin-oxc@0.5.6:
-    resolution: {integrity: sha512-TuxZheHWV5peCWhpT6brdXD4wbp0UeDUTXOw1bW57mU2FGfDXYBM75Kj2tRNHN5WrqfUCuHzqdwcgdu/K9xb9g==}
+  unplugin-oxc@0.5.7:
+    resolution: {integrity: sha512-7z86JMd3BtPjFNMCDUbQSoaGpLPdp1GJrqq37mR2kkgFUrpMqEwOp4L7p3/asjdmlsAflzP/ZZ2njm5a0Zx2ww==}
     engines: {node: '>=20.19.0'}
     peerDependencies:
       unloader: '*'
@@ -5180,7 +5180,7 @@ snapshots:
       unist-util-is: 6.0.1
       unist-util-visit-parents: 6.0.2
 
-  unplugin-oxc@0.5.6:
+  unplugin-oxc@0.5.7:
     dependencies:
       oxc-minify: 0.104.0
       oxc-resolver: 11.16.0
