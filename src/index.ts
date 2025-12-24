@@ -33,7 +33,6 @@ const InlineEnum: UnpluginInstance<Options | undefined, true> = createUnplugin<
 
   const name = 'unplugin-inline-enum'
   return [
-    replacePlugin,
     {
       name,
       enforce: options.enforce,
@@ -94,6 +93,7 @@ const InlineEnum: UnpluginInstance<Options | undefined, true> = createUnplugin<
         },
       },
     },
+    replacePlugin,
   ]
 })
 
