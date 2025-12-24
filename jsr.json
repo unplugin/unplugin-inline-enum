@@ -1,6 +1,6 @@
 {
   "name": "@unplugin/inline-enum",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "exports": {
     "./index": "./src/index.ts",
     "./api": "./src/api.ts",
