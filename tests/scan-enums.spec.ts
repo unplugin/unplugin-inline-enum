@@ -10,6 +10,7 @@ describe('scanEnums', () => {
     exclude: [],
     scanDir: path.resolve(__dirname, 'enums'),
     scanPattern: ['**/*.ts', '**/*.tsx'],
+    replaceOptions: {},
   }
 
   let fsEnums: EnumData

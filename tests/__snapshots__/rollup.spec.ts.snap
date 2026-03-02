@@ -8,7 +8,13 @@ const values = [
 	4
 ];
 
+/**
+* TestEnum.A
+*/
+function jsdoc() {}
 console.log("foo", 100, 4);
 console.log(values);
+
+export { jsdoc };
 "
 `;

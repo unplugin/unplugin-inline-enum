@@ -1,5 +1,6 @@
 import process from 'node:process'
 import type { FilterPattern } from 'unplugin'
+import type { Options as ReplaceOptions } from 'unplugin-replace'
 
 /**
  * Represents the options for the plugin.
@@ -23,6 +24,8 @@ export interface Options {
    * @default ['**\/*.{cts,mts,ts,tsx}', '!**\/node_modules']
    */
   scanPattern?: string | string[]
+
+  replaceOptions?: ReplaceOptions
 }
 
 type Overwrite<T, U> = Pick<T, Exclude<keyof T, keyof U>> & U
@@ -52,5 +55,7 @@ export function resolveOptions(options: Options): OptionsResolved {
       '**/*.{cts,mts,ts,tsx}',
       '!**/node_modules',
     ],
+
+    replaceOptions: options.replaceOptions || {},
   }
 }

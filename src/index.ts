@@ -25,6 +25,7 @@ const InlineEnum: UnpluginInstance<Options | undefined, true> = createUnplugin<
         include: options.include,
         exclude: options.exclude,
         values: defines,
+        ...options.replaceOptions,
       },
       meta,
     ),

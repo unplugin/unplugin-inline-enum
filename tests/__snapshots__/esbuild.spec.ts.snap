@@ -5,7 +5,12 @@ exports[`esbuild 1`] = `
 var values = ["foo", 100, 4];
 
 // tests/fixtures/main.ts
+function jsdoc() {
+}
 console.log("foo", 100, 4);
 console.log(values);
+export {
+  jsdoc
+};
 "
 `;

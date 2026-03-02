@@ -24,8 +24,8 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0
       unplugin-replace:
-        specifier: ^0.6.3
-        version: 0.6.3
+        specifier: ^0.7.0
+        version: 0.7.0
     devDependencies:
       '@babel/types':
         specifier: ^7.29.0
@@ -2040,6 +2040,9 @@ packages:
     resolution: {integrity: sha512-ekilCSN1jwRvIbgeg/57YFh8qQDNbwDb9xT/qu2DAHbFFZUicIl4ygVaAvzveMhMVr3LnpSKTNnwt8PoOfmKhQ==}
     hasBin: true
 
+  js-tokens@10.0.0:
+    resolution: {integrity: sha512-lM/UBzQmfJRo9ABXbPWemivdCW8V2G8FHaHdypQaIy523snUjog0W71ayWXTjiR+ixeMyVHN2XcpnTd/liPg/Q==}
+
   jsdoc-type-pratt-parser@7.1.1:
     resolution: {integrity: sha512-/2uqY7x6bsrpi3i9LVU6J89352C0rpMk0as8trXxCtvd4kPk1ke/Eyif6wqfSLvoNJqcDG9Vk4UsXgygzCt2xA==}
     engines: {node: '>=20.0.0'}
@@ -2668,8 +2671,8 @@ packages:
       unloader:
         optional: true
 
-  unplugin-replace@0.6.3:
-    resolution: {integrity: sha512-BBJGOu5T/R2BUKzQg9AjiCWfAKG/WCM6ph8Sh5rQ2fgdtDEhrDd2ZD3UeHZRZ689VsnmduTgnjg/BY8uZMe4Mg==}
+  unplugin-replace@0.7.0:
+    resolution: {integrity: sha512-Cpygt9g701xxcm+R3AWMgqptXHnELCpOBG6wGAsP8muDFZ5kxtE9IQFvNavlQAn7Z+qKaahwbsoVV45Ol+Olog==}
     engines: {node: '>=20.19.0'}
 
   unplugin-utils@0.3.1:
@@ -4497,6 +4500,8 @@ snapshots:
 
   jiti@2.6.1: {}
 
+  js-tokens@10.0.0: {}
+
   jsdoc-type-pratt-parser@7.1.1: {}
 
   jsesc@3.1.0: {}
@@ -5375,10 +5380,11 @@ snapshots:
       oxc-transform: 0.116.0
       unplugin: 2.3.11
 
-  unplugin-replace@0.6.3:
+  unplugin-replace@0.7.0:
     dependencies:
+      js-tokens: 10.0.0
       rolldown-string: 0.2.1
-      unplugin: 2.3.11
+      unplugin: 3.0.0
 
   unplugin-utils@0.3.1:
     dependencies:
