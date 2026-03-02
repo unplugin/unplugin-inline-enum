@@ -3,7 +3,7 @@
  * @module
  */
 
-import MagicString from 'magic-string'
+import { withMagicString } from 'rolldown-string'
 import { createUnplugin, type UnpluginInstance } from 'unplugin'
 import ReplacePlugin from 'unplugin-replace'
 import { scanEnums } from './core/enum'
@@ -44,10 +44,9 @@ const InlineEnum: UnpluginInstance<Options | undefined, true> = createUnplugin<
             exclude: options.exclude,
           },
         },
-        handler(code, id) {
+        handler: withMagicString((s, id) => {
           if (!(id in declarations)) return
 
-          const s: MagicString = new MagicString(code)
           for (const declaration of declarations[id]) {
             const {
               range: [start, end],
@@ -77,20 +76,7 @@ const InlineEnum: UnpluginInstance<Options | undefined, true> = createUnplugin<
                 .join(',\n')}}`,
             )
           }
-
-          if (s.hasChanged()) {
-            return {
-              code: s.toString(),
-              get map() {
-                return s.generateMap({
-                  hires: 'boundary',
-                  source: id,
-                  includeContent: true,
-                })
-              },
-            }
-          }
-        },
+        }),
       },
     },
     replacePlugin,
