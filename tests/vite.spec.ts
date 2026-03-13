@@ -2,7 +2,7 @@ import path from 'node:path'
 import { build } from 'vite'
 import { expect, test } from 'vitest'
 import UnpluginInlineEnum from '../src/vite'
-import type { RollupOutput } from 'rollup'
+import type { RolldownOutput } from 'rolldown'
 
 test('vite', async () => {
   const root = path.resolve(__dirname, 'fixtures')
@@ -22,6 +22,6 @@ test('vite', async () => {
         scanMode: 'fs',
       }),
     ],
-  })) as RollupOutput
+  })) as RolldownOutput
   expect(output[0].code).toMatchSnapshot()
 })

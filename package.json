@@ -80,6 +80,7 @@
     "esbuild": "^0.27.4",
     "eslint": "^10.0.3",
     "prettier": "^3.8.1",
+    "rolldown": "1.0.0-rc.9",
     "rollup": "^4.59.0",
     "tsdown": "^0.21.2",
     "tsdown-preset-sxzz": "^0.4.2",
