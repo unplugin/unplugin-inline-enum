@@ -7,12 +7,15 @@ const values = [
 	100,
 	4
 ];
+//#endregion
+//#region tests/fixtures/main.ts
 /**
 * TestEnum.A
 */
 function jsdoc() {}
 console.log("foo", 100, 4);
 console.log(values);
+//#endregion
 export { jsdoc };
 "
 `;
