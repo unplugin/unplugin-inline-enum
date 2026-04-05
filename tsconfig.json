@@ -4,6 +4,7 @@
     "lib": ["es2023"],
     "moduleDetection": "force",
     "module": "preserve",
+    "jsx": "preserve",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "types": ["node"],
@@ -11,7 +12,7 @@
     "noUnusedLocals": true,
     "declaration": true,
     "esModuleInterop": true,
-    "isolatedDeclarations": true,
+    "isolatedDeclarations": false,
     "isolatedModules": true,
     "verbatimModuleSyntax": true,
     "skipLibCheck": true
