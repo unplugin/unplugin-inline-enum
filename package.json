@@ -64,7 +64,7 @@
     "ast-kit": "^2.2.0",
     "picomatch": "^4.0.4",
     "rolldown-string": "^0.3.0",
-    "tinyglobby": "^0.2.15",
+    "tinyglobby": "^0.2.16",
     "unplugin": "^3.0.0",
     "unplugin-replace": "^0.8.0"
   },
@@ -73,22 +73,22 @@
     "@sxzz/eslint-config": "^7.8.4",
     "@sxzz/prettier-config": "^2.3.1",
     "@sxzz/test-utils": "^0.5.16",
-    "@types/node": "^25.5.2",
+    "@types/node": "^25.6.0",
     "@types/picomatch": "^4.0.3",
-    "@typescript/native-preview": "7.0.0-dev.20260405.1",
+    "@typescript/native-preview": "7.0.0-dev.20260412.1",
     "bumpp": "^11.0.1",
     "esbuild": "^0.28.0",
     "eslint": "^10.2.0",
-    "prettier": "^3.8.1",
-    "rolldown": "1.0.0-rc.13",
+    "prettier": "^3.8.2",
+    "rolldown": "1.0.0-rc.15",
     "rollup": "^4.60.1",
     "tsdown": "^0.21.7",
     "tsdown-preset-sxzz": "^0.5.0",
     "typescript": "^6.0.2",
     "unplugin-oxc": "^0.6.0",
-    "vite": "^8.0.3",
-    "vitest": "^4.1.2",
-    "webpack": "^5.105.4"
+    "vite": "^8.0.8",
+    "vitest": "^4.1.4",
+    "webpack": "^5.106.1"
   },
   "prettier": "@sxzz/prettier-config"
 }
