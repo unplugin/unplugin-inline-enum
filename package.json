@@ -2,7 +2,7 @@
   "name": "unplugin-inline-enum",
   "type": "module",
   "version": "0.7.0",
-  "packageManager": "pnpm@11.0.8",
+  "packageManager": "pnpm@11.0.9",
   "description": "Inline enum values to optimize bundle size.",
   "author": "Kevin Deng <sxzz@sxzz.moe>",
   "license": "MIT",
@@ -48,7 +48,7 @@
     "access": "public"
   },
   "engines": {
-    "node": ">=20.19.0"
+    "node": "^22.18.0 || >=24.0.0"
   },
   "scripts": {
     "lint": "eslint --cache .",
