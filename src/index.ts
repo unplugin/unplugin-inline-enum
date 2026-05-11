@@ -54,6 +54,15 @@ const InlineEnum: UnpluginInstance<Options | undefined, true> = createUnplugin<
               id,
               members,
             } = declaration
+            // For numeric members with duplicate values, only the last one
+            // gets a reverse mapping to avoid duplicate keys in the object literal.
+            // This matches TypeScript's runtime behavior where later assignments overwrite earlier ones.
+            const lastForValue = new Map<number, string>()
+            for (const { name, value } of members) {
+              if (typeof value === 'number') {
+                lastForValue.set(value, name)
+              }
+            }
             s.update(
               start,
               end,
@@ -68,11 +77,13 @@ const InlineEnum: UnpluginInstance<Options | undefined, true> = createUnplugin<
                         forwardMapping,
                         // string enum members do not get a reverse mapping generated at all
                       ]
-                    : [
-                        forwardMapping,
-                        // other enum members should support enum reverse mapping
-                        reverseMapping,
-                      ]
+                    : lastForValue.get(value) === name
+                      ? [
+                          forwardMapping,
+                          // numeric enum members get a reverse mapping (last wins)
+                          reverseMapping,
+                        ]
+                      : [forwardMapping]
                 })
                 .join(',\n')}}`,
             )
