@@ -75,7 +75,7 @@
     "@sxzz/test-utils": "^0.5.18",
     "@types/node": "^25.6.2",
     "@types/picomatch": "^4.0.3",
-    "@typescript/native-preview": "7.0.0-dev.20260508.1",
+    "@typescript/native-preview": "7.0.0-dev.20260510.1",
     "bumpp": "^11.1.0",
     "esbuild": "^0.28.0",
     "eslint": "^10.3.0",
