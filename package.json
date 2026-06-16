@@ -32,15 +32,6 @@
     "./webpack": "./dist/webpack.mjs",
     "./package.json": "./package.json"
   },
-  "types": "./dist/index.d.mts",
-  "typesVersions": {
-    "*": {
-      "*": [
-        "./dist/*.d.mts",
-        "./*"
-      ]
-    }
-  },
   "files": [
     "dist"
   ],
