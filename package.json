@@ -2,7 +2,7 @@
   "name": "unplugin-inline-enum",
   "type": "module",
   "version": "0.8.0",
-  "packageManager": "pnpm@11.6.0",
+  "packageManager": "pnpm@11.7.0",
   "description": "Inline enum values to optimize bundle size.",
   "author": "Kevin Deng <sxzz@sxzz.moe>",
   "license": "MIT",
@@ -48,7 +48,7 @@
     "access": "public"
   },
   "engines": {
-    "node": "^22.18.0 || >=24.0.0"
+    "node": "^22.18.0 || >=24.11.0"
   },
   "scripts": {
     "lint": "eslint --cache .",
@@ -61,7 +61,7 @@
     "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
-    "ast-kit": "^2.2.0",
+    "ast-kit": "^3.0.0",
     "picomatch": "^4.0.4",
     "rolldown-string": "^0.3.0",
     "tinyglobby": "^0.2.17",
@@ -70,24 +70,24 @@
   },
   "devDependencies": {
     "@babel/types": "^7.29.7",
-    "@sxzz/eslint-config": "^8.1.0",
+    "@sxzz/eslint-config": "^8.2.1",
     "@sxzz/prettier-config": "^2.3.1",
     "@sxzz/test-utils": "^0.5.18",
     "@types/node": "^25.9.3",
     "@types/picomatch": "^4.0.3",
-    "@typescript/native-preview": "7.0.0-dev.20260614.1",
+    "@typescript/native-preview": "7.0.0-dev.20260616.1",
     "bumpp": "^11.1.0",
     "esbuild": "^0.28.1",
     "eslint": "^10.5.0",
     "prettier": "^3.8.4",
     "rolldown": "1.1.1",
-    "rollup": "^4.61.1",
+    "rollup": "^4.62.0",
     "tsdown": "^0.22.2",
     "tsdown-preset-sxzz": "^0.6.0",
     "typescript": "^6.0.3",
     "unplugin-oxc": "^0.6.1",
     "vite": "^8.0.16",
-    "vitest": "^4.1.8",
+    "vitest": "^4.1.9",
     "webpack": "^5.107.2"
   },
   "prettier": "@sxzz/prettier-config"
