@@ -233,7 +233,7 @@ export function scanFiles(options: ScanOptions): string[] {
     }
 
     const matcher = picomatch(options.scanPattern)
-    return [...new Set(stdout.split('\n').map((line) => line.split(':')[0]))]
+    return [...new Set(stdout.split('\n').map((line) => line.split(':', 1)[0]))]
       .map((file) => path.resolve(options.scanDir, file))
       .filter((file) => matcher(file))
   }
