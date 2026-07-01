@@ -23,10 +23,113 @@ exports[`scanEnums > scanMode: fs 1`] = `
             "name": "D",
             "value": 3.14,
           },
+          {
+            "name": "E",
+            "value": -1,
+          },
+          {
+            "name": "F",
+            "value": -1,
+          },
         ],
         "range": [
-          0,
-          74,
+          35,
+          129,
+        ],
+      },
+      {
+        "id": "Flags",
+        "members": [
+          {
+            "name": "None",
+            "value": 0,
+          },
+          {
+            "name": "A",
+            "value": 1,
+          },
+          {
+            "name": "B",
+            "value": 2,
+          },
+          {
+            "name": "C",
+            "value": 4,
+          },
+          {
+            "name": "D",
+            "value": 8,
+          },
+          {
+            "name": "E",
+            "value": 16,
+          },
+          {
+            "name": "AB",
+            "value": 3,
+          },
+          {
+            "name": "ABC",
+            "value": 7,
+          },
+          {
+            "name": "ABCD",
+            "value": 15,
+          },
+          {
+            "name": "All",
+            "value": 15,
+          },
+          {
+            "name": "NotAll",
+            "value": -16,
+          },
+        ],
+        "range": [
+          223,
+          456,
+        ],
+      },
+      {
+        "id": "Items",
+        "members": [
+          {
+            "name": "First",
+            "value": 0,
+          },
+          {
+            "name": "Second",
+            "value": 1,
+          },
+          {
+            "name": "Third",
+            "value": 2,
+          },
+          {
+            "name": "Last",
+            "value": 2,
+          },
+          {
+            "name": "Next",
+            "value": 3,
+          },
+        ],
+        "range": [
+          535,
+          608,
+        ],
+      },
+      {
+        "id": "CrossFileRef",
+        "members": [
+          {
+            "name": "X",
+            "value": 100,
+          },
+        ],
+        "range": [
+          610,
+          657,
         ],
       },
     ],
@@ -59,10 +162,29 @@ exports[`scanEnums > scanMode: fs 1`] = `
     ],
   },
   "defines": {
+    "CrossFileRef.X": "100",
+    "Flags.A": "1",
+    "Flags.AB": "3",
+    "Flags.ABC": "7",
+    "Flags.ABCD": "15",
+    "Flags.All": "15",
+    "Flags.B": "2",
+    "Flags.C": "4",
+    "Flags.D": "8",
+    "Flags.E": "16",
+    "Flags.None": "0",
+    "Flags.NotAll": "-16",
+    "Items.First": "0",
+    "Items.Last": "2",
+    "Items.Next": "3",
+    "Items.Second": "1",
+    "Items.Third": "2",
     "TestEnum.A": ""foo"",
     "TestEnum.B": "100",
     "TestEnum.C": "4",
     "TestEnum.D": "3.14",
+    "TestEnum.E": "-1",
+    "TestEnum.F": "-1",
     "TestEnum2.A": ""foo"",
     "TestEnum2.B": "100",
     "TestEnum2.C": "4",
