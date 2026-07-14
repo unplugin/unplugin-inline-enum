@@ -75,7 +75,7 @@
     "rollup": "^4.62.0",
     "tsdown": "^0.22.2",
     "tsdown-preset-sxzz": "^0.6.0",
-    "typescript": "^6.0.3",
+    "typescript": "^7.0.0",
     "unplugin-oxc": "^0.6.1",
     "vite": "^8.0.16",
     "vitest": "^4.1.9",
