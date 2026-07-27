@@ -21,7 +21,7 @@ exports[`scanEnums > scanMode: fs 1`] = `
           },
           {
             "name": "D",
-            "value": 3.14,
+            "value": 3.15,
           },
         ],
         "range": [
@@ -48,7 +48,7 @@ exports[`scanEnums > scanMode: fs 1`] = `
           },
           {
             "name": "D",
-            "value": 3.14,
+            "value": 3.15,
           },
         ],
         "range": [
@@ -62,11 +62,11 @@ exports[`scanEnums > scanMode: fs 1`] = `
     "TestEnum.A": ""foo"",
     "TestEnum.B": "100",
     "TestEnum.C": "4",
-    "TestEnum.D": "3.14",
+    "TestEnum.D": "3.15",
     "TestEnum2.A": ""foo"",
     "TestEnum2.B": "100",
     "TestEnum2.C": "4",
-    "TestEnum2.D": "3.14",
+    "TestEnum2.D": "3.15",
   },
 }
 `;
