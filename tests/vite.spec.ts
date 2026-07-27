@@ -5,7 +5,7 @@ import UnpluginInlineEnum from '../src/vite'
 import type { RolldownOutput } from 'rolldown'
 
 test('vite', async () => {
-  const root = path.resolve(__dirname, 'fixtures')
+  const root = path.resolve(import.meta.dirname, 'fixtures')
   const { output } = (await build({
     root,
     build: {
@@ -18,7 +18,7 @@ test('vite', async () => {
     logLevel: 'silent',
     plugins: [
       UnpluginInlineEnum({
-        scanDir: path.resolve(__dirname, 'fixtures'),
+        scanDir: path.resolve(import.meta.dirname, 'fixtures'),
         scanMode: 'fs',
       }),
     ],

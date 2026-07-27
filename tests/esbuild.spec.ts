@@ -5,13 +5,13 @@ import UnpluginInlineEnum from '../src/esbuild'
 
 test('esbuild', async () => {
   const result = await build({
-    entryPoints: [path.resolve(__dirname, 'fixtures/main.ts')],
+    entryPoints: [path.resolve(import.meta.dirname, 'fixtures/main.ts')],
     bundle: true,
     write: false,
     format: 'esm',
     plugins: [
       UnpluginInlineEnum({
-        scanDir: path.resolve(__dirname, 'fixtures'),
+        scanDir: path.resolve(import.meta.dirname, 'fixtures'),
         scanMode: 'fs',
       }),
     ],

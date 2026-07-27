@@ -4,11 +4,11 @@ import { scanEnums, type EnumData } from '../src/core/enum'
 import type { OptionsResolved } from '../src/core/options'
 
 describe('scanEnums', () => {
-  const scanDir = path.resolve(__dirname, 'enums')
+  const scanDir = path.resolve(import.meta.dirname, 'enums')
   const options: Omit<OptionsResolved, 'scanMode'> = {
     include: [/\.ts/],
     exclude: [],
-    scanDir: path.resolve(__dirname, 'enums'),
+    scanDir: path.resolve(import.meta.dirname, 'enums'),
     scanPattern: ['**/*.ts', '**/*.tsx'],
     replaceOptions: {},
   }
