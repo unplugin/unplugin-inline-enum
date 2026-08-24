@@ -2,6 +2,7 @@
 
 exports[`rollup 1`] = `
 "// main.js
+// Verify source ranges after non-ASCII text: 枚举.
 const values = [
 	"foo",
 	100,

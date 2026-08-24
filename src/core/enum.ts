@@ -1,12 +1,16 @@
-import assert from 'node:assert'
 import { spawnSync } from 'node:child_process'
 import { readFileSync } from 'node:fs'
 import path from 'node:path'
-import { babelParse, getLang, isDts, isTs } from 'ast-kit'
 import picomatch from 'picomatch'
 import { globSync } from 'tinyglobby'
+import {
+  langFromPath,
+  parse,
+  sourceTypeFromPath,
+  type Expression,
+  type PrivateIdentifier,
+} from 'yuku-parser'
 import type { OptionsResolved } from './options'
-import type { Expression, PrivateName } from '@babel/types'
 
 /**
  * Represents the scan options for the enum.
@@ -69,14 +73,26 @@ export function scanEnums(options: ScanOptions): EnumData {
 
   // 2. parse matched files to collect enum info
   for (const file of files) {
-    const lang = getLang(file)
-    if (!isTs(lang) || isDts(file)) continue
+    const lang = langFromPath(file)
+    if (lang !== 'ts' && lang !== 'tsx') continue
 
     const content = readFileSync(file, 'utf8')
-    const ast = babelParse(content, lang)
+    const result = parse(content, {
+      lang,
+      preserveParens: false,
+      sourceType: sourceTypeFromPath(file),
+    })
+    const parseError = result.diagnostics.find(
+      ({ severity }) => severity === 'error',
+    )
+    if (parseError) {
+      throw new SyntaxError(
+        `${parseError.message} at offset ${parseError.start} in ${file}`,
+      )
+    }
 
     const enumIds: Set<string> = new Set()
-    for (const node of ast.body) {
+    for (const node of result.program.body) {
       if (
         node.type === 'ExportNamedDeclaration' &&
         node.declaration &&
@@ -95,7 +111,16 @@ export function scanEnums(options: ScanOptions): EnumData {
         const members: Array<EnumMember> = []
 
         for (const e of decl.body.members) {
-          const key = e.id.type === 'Identifier' ? e.id.name : e.id.value
+          let key: string
+          if (e.id.type === 'Identifier') {
+            key = e.id.name
+          } else if (e.id.type === 'Literal') {
+            key = e.id.value
+          } else {
+            throw new Error(
+              `unhandled enum member name type ${e.id.type} in ${file}`,
+            )
+          }
           const fullKey = `${id}.${key}` as const
           const saveValue = (value: string | number) => {
             // We need allow same name enum in different file.
@@ -114,19 +139,25 @@ export function scanEnums(options: ScanOptions): EnumData {
           if (init) {
             let value: string | number
             switch (init.type) {
-              case 'StringLiteral':
-              case 'NumericLiteral': {
+              case 'Literal': {
+                if (
+                  typeof init.value !== 'string' &&
+                  typeof init.value !== 'number'
+                ) {
+                  throw new TypeError(
+                    `unhandled initializer value ${String(init.value)} for ${fullKey} in ${file}`,
+                  )
+                }
                 value = init.value
 
                 break
               }
               case 'BinaryExpression': {
-                const resolveValue = (node: Expression | PrivateName) => {
-                  assert.ok(typeof node.start === 'number')
-                  assert.ok(typeof node.end === 'number')
+                const resolveValue = (node: Expression | PrivateIdentifier) => {
                   if (
-                    node.type === 'NumericLiteral' ||
-                    node.type === 'StringLiteral'
+                    node.type === 'Literal' &&
+                    (typeof node.value === 'number' ||
+                      typeof node.value === 'string')
                   ) {
                     return node.value
                   } else if (node.type === 'MemberExpression') {
@@ -155,8 +186,9 @@ export function scanEnums(options: ScanOptions): EnumData {
               }
               case 'UnaryExpression': {
                 if (
-                  init.argument.type === 'StringLiteral' ||
-                  init.argument.type === 'NumericLiteral'
+                  init.argument.type === 'Literal' &&
+                  (typeof init.argument.value === 'string' ||
+                    typeof init.argument.value === 'number')
                 ) {
                   const exp = `${init.operator}${init.argument.value}`
                   value = evaluate(exp)
@@ -192,8 +224,6 @@ export function scanEnums(options: ScanOptions): EnumData {
         if (!(file in declarations)) {
           declarations[file] = []
         }
-        assert.ok(typeof node.start === 'number')
-        assert.ok(typeof node.end === 'number')
         declarations[file].push({
           id,
           range: [node.start, node.end],
