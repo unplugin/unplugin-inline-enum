@@ -57,7 +57,7 @@
     "tinyglobby": "^0.2.17",
     "unplugin": "^3.3.0",
     "unplugin-replace": "^0.9.0",
-    "yuku-parser": "^0.9.1"
+    "yuku-parser": "^0.10.0"
   },
   "devDependencies": {
     "@sxzz/eslint-config": "^8.5.0",
@@ -70,7 +70,7 @@
     "esbuild": "^0.28.2",
     "eslint": "^10.9.0",
     "prettier": "^3.9.6",
-    "rolldown": "1.2.7",
+    "rolldown": "1.2.8",
     "rollup": "^4.62.5",
     "tsdown": "^0.23.0",
     "tsdown-preset-sxzz": "^0.7.0",
