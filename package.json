@@ -2,13 +2,6 @@
   "name": "unplugin-inline-enum",
   "type": "module",
   "version": "0.8.3",
-  "devEngines": {
-    "packageManager": {
-      "name": "pnpm",
-      "version": "12.11.2",
-      "onFail": "download"
-    }
-  },
   "description": "Inline enum values to optimize bundle size.",
   "author": "Kevin Deng <sxzz@sxzz.moe>",
   "license": "MIT",
@@ -48,13 +41,20 @@
   "engines": {
     "node": "^22.18.0 || >=24.11.0"
   },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.11.2",
+      "onFail": "download"
+    }
+  },
   "scripts": {
     "lint": "eslint --cache .",
     "lint:fix": "pnpm run lint --fix",
     "build": "tsdown",
     "dev": "tsdown --watch",
     "test": "vitest",
-    "typecheck": "tsgo --noEmit",
+    "typecheck": "tsc --noEmit",
     "release": "bumpp",
     "prepublishOnly": "pnpm run build"
   },
@@ -72,7 +72,7 @@
     "@sxzz/test-utils": "^0.5.19",
     "@types/node": "^26.6.5",
     "@types/picomatch": "^4.0.3",
-    "@typescript/native-preview": "7.0.0-dev.20260707.2",
+    "@typescript/native-preview": "npm:typescript@7.0.2",
     "bumpp": "^12.3.0",
     "esbuild": "^0.28.2",
     "eslint": "^10.12.0",
